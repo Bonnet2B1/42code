@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile_jolie_mise_en_page.txt                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/23 13:17:34 by mvidal-a          #+#    #+#              #
-#    Updated: 2022/09/10 08:54:15 by marvin           ###   ########.fr        #
+#    Updated: 2022/11/01 17:25:59 by edelarbr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,3 +124,14 @@ fclean:			clean
 re:				fclean all
 
 .PHONY:			all clean fclean re bonus custom
+
+
+#$@ --> Le nom de la cible
+
+#$< --> Le nom de la première dépendance
+
+#$^ --> La liste des dépendances
+
+#$? --> La liste des dépendances plus récentes que la cible
+
+#$* --> Le nom du fichier sans suffixe

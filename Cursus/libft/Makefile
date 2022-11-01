@@ -99,14 +99,13 @@ CFLAGS		+= -Werror
 CFLAGS		+= -g
 
 #	=== COMMANDES ===
-
-$(NAME):		$(OBJS)
-				ar rcs $@ $^
+.c.o :
+				$(CC) $(CFLAGS) -c $< -o $@ $
 
 all:			$(NAME)
 
-%.o :			%.c
-				$(CC) $(CFLAGS) -c $< -o $@
+$(NAME):		$(OBJS)
+				${CC} -o $@ $^ 
 
 clean:
 				rm -f $(OBJS)
@@ -133,3 +132,13 @@ re:				fclean all
 
 
 # .PHONY:		clean clean
+
+#$@ --> Le nom de la cible
+
+#$< --> Le nom de la première dépendance
+
+#$^ --> La liste des dépendances
+
+#$? --> La liste des dépendances plus récentes que la cible
+
+#$* --> Le nom du fichier sans suffixe
