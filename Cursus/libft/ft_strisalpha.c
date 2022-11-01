@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strisalpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:36:25 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/09/03 17:32:37 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/31 18:17:20 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_strisalpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z')
-			|| (str[i] >= 'A' && str[i] <= 'Z'))
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A'
+				&& str[i] <= 'Z'))
 			i++;
 		else
 			return (0);

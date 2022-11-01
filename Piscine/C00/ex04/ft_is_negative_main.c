@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_negative_main.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelarbr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 19:27:17 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/07/14 12:06:04 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:49:29 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 void	ft_is_negative(int n)
 {
-	if (n<0)
+	if (n < 0)
 		write(1, "N", 1);
-	else 
+	else
 		write(1, "P", 1);
-}
-
-int main()
-{
-	ft_is_negative(5);
-	return 0;
 }

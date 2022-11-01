@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 08:04:47 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/10 08:04:47 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:45 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:45 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // DESCRIPTION : Alloue (avec malloc(3)) et retourne un tableau de chaines de
 // caractères “fraiches” (toutes terminées par un ’\0’, le tableau
 // également donc) résultant de la découpe de s selon le caractère
-// c. Si l’allocation echoue, la fonction retourne NULL. 
+// c. Si l’allocation echoue, la fonction retourne NULL.
 // EXEMPLE : ft_strsplit("*salut*les***etudiants*", ’*’) renvoie
 // le tableau ["salut", "les", "etudiants"].
 
@@ -108,7 +108,7 @@ char	**ft_strsplit(char const *s, char c)
 		itab = 0;
 		jtab++;
 	}
-	tab[jtab] = '\0';
+	tab[jtab] = 0;
 	return (tab);
 }
 
@@ -129,5 +129,5 @@ char	**ft_strsplit(char const *s, char c)
 // 		printf("%s, %lld ; ", tab[i], ft_strlen(tab[i]));
 // 		i++;
 // 	}
-// 	return 0;
+// 	return (0);
 // }

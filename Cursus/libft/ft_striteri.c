@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 10:30:45 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/07 10:30:45 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:26 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:26 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i = 0;
+	unsigned int	i;
+
+	i = 0;
 	while (s[i])
 	{
 		f(i, &s[i]);

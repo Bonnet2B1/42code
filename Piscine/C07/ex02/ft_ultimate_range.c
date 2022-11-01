@@ -6,14 +6,14 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:46:59 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/08/04 16:19:05 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:47:41 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int ft_ultimate_range(int **range, int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
 	int	*str;
@@ -32,9 +32,4 @@ int ft_ultimate_range(int **range, int min, int max)
 		min++;
 	}
 	return (*range);
-}
-
-int main()
-{
-
 }

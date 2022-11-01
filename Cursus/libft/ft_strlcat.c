@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 17:30:59 by marvin            #+#    #+#             */
-/*   Updated: 2022/08/29 17:30:59 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:29 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:29 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t i;
-	size_t j;
-	size_t res_d;
-	size_t res_s;
+	size_t	j;
+	size_t	i;
+	size_t	res_d;
+	size_t	res_s;
 
 	i = ft_strlen(dest);
 	j = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 16:03:46 by marvin            #+#    #+#             */
-/*   Updated: 2022/08/29 16:03:46 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:43 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:43 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int	i;
+	int		i;
 	char	*str_not_const;
-	
+
 	str_not_const = (char *)str;
 	i = ft_strlen(str_not_const);
 	while (i > 0)

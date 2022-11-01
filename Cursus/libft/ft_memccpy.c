@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 17:41:37 by marvin            #+#    #+#             */
-/*   Updated: 2022/08/30 17:41:37 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/31 18:16:29 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:16:29 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int	main(void)
 	printf("Avant    memccpy : %s\n", dst);
 	printf("Apres    memccpy : %s\n", (char *)memccpy(dst, src, c, 11));
 	printf("Avant ft_memccpy : %s\n", dst_ft);
-	printf("Apres ft_memccpy : %s\n", (char *)ft_memccpy(dst_ft, src_ft, c, 11));
+	printf("Apres ft_memccpy : %s\n", (char *)ft_memccpy(dst_ft, src_ft, c,
+				11));
 	printf("dst contient     : %s\n", dst);
 	printf("dst_ft contient  : %s\n", dst_ft);
 	return (0);

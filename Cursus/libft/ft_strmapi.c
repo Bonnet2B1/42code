@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 10:49:59 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/13 10:49:59 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:34 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:34 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 
 	if (!s)
 		return (NULL);
-	if (!(str = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1)))
+	str = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1);
+	if (!(str))
 		return (NULL);
 	i = 0;
 	while (s[i])
@@ -42,11 +43,11 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 // {
 // 	if (c == 'o' && i < 100 && i > 0)
 // 		c = 'z';
-// 	return c;
+// 	return (c);
 // }
 
 // int main()
 // {
 // 	printf("%s\n", ft_strmapi("Helo World !", otoz));
-// 	return 0;
+// 	return (0);
 // }

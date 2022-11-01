@@ -16,15 +16,22 @@
 #include <strings.h>
 #include <stdlib.h>
 
-char otoz(unsigned int i, char c)
-{
-	if (c == 'o' && i < 100 && i > 0)
-		c = 'z';
-	return c;
-}
+// char otoz(unsigned int i, char c)
+// {
+// 	if (c == 'o' && i < 100 && i > 0)
+// 		c = 'z';
+// 	return c;
+// }
+
+// int main()
+// {
+// 	printf("%s\n", ft_strmapi("Helo World !", otoz));
+// 	return 0;
+// }
+
 
 int main()
 {
-	printf("%s\n", ft_strmapi("Helo World !", otoz));
-	return 0;
+	printf("Le nombre retourne est : %s\n", ft_itoa(-3485));
 }
+

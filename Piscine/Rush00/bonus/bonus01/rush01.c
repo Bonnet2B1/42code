@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 11:22:16 by ggiboury          #+#    #+#             */
-/*   Updated: 2022/07/17 16:19:13 by ggiboury         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:48:01 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	rush(int x, int y)
 	}
 }
 
-void ft_putline(int x, char beginning, char ending)
+void	ft_putline(int x, char beginning, char ending)
 {
 	ft_putchar(beginning);
 	if (x > 2)
@@ -49,7 +49,7 @@ void ft_putline(int x, char beginning, char ending)
 	ft_putchar('\n');
 }
 
-void ft_putcolumn(int y)
+void	ft_putcolumn(int y)
 {
 	if (y > 1)
 		ft_putchar('*');

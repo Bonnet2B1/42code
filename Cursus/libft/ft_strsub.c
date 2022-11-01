@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 10:35:23 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/08 10:35:23 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:49 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:49 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 }
 
 /* 
-int main()
+int	main(void)
 {
 	printf("Retour de ft_strsub : %s", ft_strsub("Hello World !", 7, 5));
 }

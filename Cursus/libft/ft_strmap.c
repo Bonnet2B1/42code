@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 10:52:45 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/13 10:52:45 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/31 18:20:55 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:20:55 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*ft_strmap(const char *s, char (*f)(char))
 
 	if (!s)
 		return (NULL);
-	if (!(str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)))
+	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!(str))
 		return (NULL);
 	i = 0;
 	while (s[i])
@@ -34,7 +35,7 @@ char	*ft_strmap(const char *s, char (*f)(char))
 		i++;
 	}
 	str[i] = '\0';
-	return str;
+	return (str);
 }
 
 // #include "libft.h"
@@ -47,11 +48,11 @@ char	*ft_strmap(const char *s, char (*f)(char))
 // {
 // 	if (c == 'o')
 // 		c = 'z';
-// 	return c;
+// 	return (c);
 // }
 
 // int main()
 // {
 // 	printf("%s\n", ft_strmap("Helo World !", otoz));
-// 	return 0;
+// 	return (0);
 // }

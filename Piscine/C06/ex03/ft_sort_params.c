@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 16:18:29 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/08/04 16:45:33 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:49:02 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,4 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	}
 	return (0);
-}
-
-int	main(int argc, char **argv)
-{
-	(void)argc;
-	int i = 1;
-	int j = 2;
-	while (j < argc -1)
-		printf("%d", ft_strcmp(argv[i], argv[j]));
-		i++;
-		j++;
-	return 0;
 }

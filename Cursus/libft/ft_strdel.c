@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:16:09 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/07 09:16:09 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:13 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:13 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
 	if (as)
 	{
