@@ -5,52 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 18:16:25 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/10/31 18:16:25 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/11/01 16:09:08 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/01 16:09:08 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void defsign(int *n, size_t *s_len, char *s)
+void	defsign(int *n, size_t *s_len, char **s)
 {
-	if (n < 0)
-	{
-		s = ft_strnew(*s_len + 2);
-		s[0] = '-';
-		s_len++;
-		*n *= -1;
-	}
-	else
-		s = ft_strnew(*s_len + 1);
-}
+	int n_cpy;
 
-char	*ft_itoa(int n)
-{
-	size_t	s_len;
-	int		n_cpy;
-	char	*s;
-
-	s = NULL;
-	s_len = 0;
-	n_cpy = n;
+	n_cpy = *n;
 	while (n_cpy / 10)
 	{
 		n_cpy /= 10;
-		s_len++;
+		(*s_len)++;
 	}
-	defsign(&n, &s_len, s);
-	// if (n < 0)
-	// {
-	// 	s = ft_strnew(s_len + 2);
-	// 	s[0] = '-';
-	// 	s_len++;
-	// 	n *= -1;
-	// }
-	// else
-	// 	s = ft_strnew(s_len + 1);
+	if (*n < 0)
+		(*s_len)++;
+	*s = ft_strnew(*s_len + 1);
+}
+
+char	*ft_itoa(n)
+{
+	size_t s_len;
+	char *s;
+
+	defsign(&n, &s_len, &s);
 	if (n == 0)
-		return ("0");
+		s[0] = '0';
+	if (n < 0)
+	{
+		s[0] = '-';
+		n = -n;
+	}
 	while (n)
 	{
 		s[s_len] = (n % 10) + 48;

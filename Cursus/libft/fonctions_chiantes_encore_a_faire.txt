@@ -1,2 +1,0 @@
--	ft_strmap
--	ft_strmapi
