@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <string.h>
 
-char	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	const char	*char_src;
 	char		*char_dest;

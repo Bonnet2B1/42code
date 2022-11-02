@@ -6,7 +6,10 @@
     "stddef.h": "c",
     "stdlib.h": "c",
     "string.h": "c",
-    "_size_t.h": "c"
+    "_size_t.h": "c",
+    "__config": "c",
+    "unistd.h": "c",
+    "sstream": "c"
   },
   "search.useGlobalIgnoreFiles": false,
   "search.useParentIgnoreFiles": false,

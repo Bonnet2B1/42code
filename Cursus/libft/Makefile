@@ -96,16 +96,18 @@ OBJS		= $(SRCS:.c=.o)
 CFLAGS		+= -Wall
 CFLAGS		+= -Wextra
 CFLAGS		+= -Werror
+CFLAGS		+= -Wpadded
 CFLAGS		+= -g
 
 #	=== COMMANDES ===
 .c.o :
-				$(CC) $(CFLAGS) -c $< -o $@ $
+				$(CC) $(CFLAGS) -c $< -o $@ 
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				${CC} -o $@ $^ 
+				ar rcs $@ $^ 
+				ranlib $(NAME)
 
 clean:
 				rm -f $(OBJS)

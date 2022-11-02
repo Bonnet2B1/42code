@@ -13,14 +13,14 @@
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+void	ft_putstr(char const *s)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 	{
-		write(1, &str[i], 1);
+		write(1, &s[i], 1);
 		i++;
 	}
 }
