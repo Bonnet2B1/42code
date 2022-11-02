@@ -40,17 +40,17 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 }
 
 /* 
-#include <stdio.h>
-#include <string.h>
+	#include <stdio.h>
+	#include <string.h>
 
-int	main(void)
-{
-	char str[40] = "cette_phrase_se_chevauche";
-	char ft_str[40] = "cette_phrase_se_chevauche";
-	int n = 25;
-	printf("memmove renvoie    : %s\n", (char *)memmove(str + 8, str + 3, n));
-	printf("ft_memmove renvoie : %s\n", (char *)ft_memmove(ft_str + 8, ft_str
-				+ 3, n));
-	return (0);
-}
-*/
+	int	main(void)
+	{
+		char str[40] = "cette_phrase_se_chevauche";
+		char ft_str[40] = "cette_phrase_se_chevauche";
+		int n = 25;
+		printf("memmove renvoie    : %s\n", (char *)memmove(str + 8, str + 3, n));
+		printf("ft_memmove renvoie : %s\n", (char *)ft_memmove(ft_str + 8, ft_str
+					+ 3, n));
+		return (0);
+	}
+	*/
