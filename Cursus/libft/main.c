@@ -32,12 +32,11 @@
 
 int main()
 {
-	char	*str;
+	// char	*str;
 //	char	*s="fbdsgh";
 
-	str =  ft_itoa(-1);
-	printf("Le nombre retourne est : %s\n", str);
-	free(str);
+	// str = ft_itoa(-2147483648);
+	printf("Le nombre retourne est : %s\n", ft_itoa(-2147483648));
 //	free(s);
 }
 

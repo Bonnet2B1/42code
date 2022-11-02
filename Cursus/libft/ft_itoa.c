@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 16:09:08 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/01 16:09:08 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/11/02 10:59:22 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/02 10:59:22 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	defsign(int *n, size_t *s_len, char **s)
 {
-	int n_cpy;
+	int	n_cpy;
 
 	n_cpy = *n;
 	while (n_cpy / 10)
@@ -27,11 +27,22 @@ void	defsign(int *n, size_t *s_len, char **s)
 	*s = ft_strnew(*s_len + 1);
 }
 
-char	*ft_itoa(n)
+void	sisintmin(char **s)
 {
-	size_t s_len;
-	char *s;
+	*s = ft_strnew(11);
+	*s = ("-2147483648");
+}
 
+char	*ft_itoa(int n)
+{
+	size_t	s_len;
+	char	*s;
+
+	if (n == -2147483648)
+	{
+		sisintmin(&s);
+		return (s);
+	}
 	defsign(&n, &s_len, &s);
 	if (n == 0)
 		s[0] = '0';

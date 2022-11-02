@@ -4,7 +4,9 @@
     "stdio.h": "c",
     "libft.h": "c",
     "stddef.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "string.h": "c",
+    "_size_t.h": "c"
   },
   "search.useGlobalIgnoreFiles": false,
   "search.useParentIgnoreFiles": false,
