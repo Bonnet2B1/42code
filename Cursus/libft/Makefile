@@ -88,26 +88,22 @@ SRCS		+= ft_swap.c
 #	=== KEYS WORDS ===
 NAME		= libft.a
 
-CC			= gcc 
-
 OBJS		= $(SRCS:.c=.o)
 
 #	=== FLAGS ===
 CFLAGS		+= -Wall
 CFLAGS		+= -Wextra
 CFLAGS		+= -Werror
-CFLAGS		+= -Wpadded
 CFLAGS		+= -g
+CFLAGS		+= -c
 
 #	=== COMMANDES ===
-.c.o :
-				$(CC) $(CFLAGS) -c $< -o $@ 
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				ar rcs $@ $^ 
-				ranlib $(NAME)
+				ranlib $@
 
 clean:
 				rm -f $(OBJS)

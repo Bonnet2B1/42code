@@ -18,6 +18,12 @@ char	*ft_strchr(const char *s, int c)
 	char	*char_s;
 
 	char_s = (char *)s;
+	if (c > 127) 
+		return (NULL);
+	if (c == '\0')
+	{
+		return (&char_s[ft_strlen(s)]);
+	}
 	i = 0;
 	while (char_s[i])
 	{

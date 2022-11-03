@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *str, int c)
 
 	str_not_const = (char *)str;
 	i = ft_strlen(str_not_const);
-	while (i > 0)
+	while (i >= 0)
 	{
 		if (str_not_const[i] == c)
 			return (&str_not_const[i]);
