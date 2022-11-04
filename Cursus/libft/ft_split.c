@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 18:17:45 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/10/31 18:17:45 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/11/04 09:42:20 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/04 09:42:20 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,99 +17,98 @@
 // EXEMPLE : ft_strsplit("*salut*les***etudiants*", ’*’) renvoie
 // le tableau ["salut", "les", "etudiants"].
 
-#include "libft.h"
-#include <stdlib.h>
+#include "libft.h"	
 
-int	count_words(char *str, char c)
+int	is_separator(char c, char *charset)
 {
 	int	i;
-	int	nbr_of_wrd;
 
 	i = 0;
-	nbr_of_wrd = 0;
-	while (str[i])
+	while (charset[i])
 	{
-		if (str[i] == c && str[i + 1] != c && str[i + 1])
-			nbr_of_wrd++;
+		if (c == charset[i])
+			return (1);
 		i++;
 	}
-	return (nbr_of_wrd);
+	return (0);
 }
 
-int	max_len(char *str, char c)
+int	wordcount(const char *str, char *charset)
 {
 	int	i;
-	int	len;
-	int	max_len;
+	int	wc;
 
 	i = 0;
-	len = 0;
-	max_len = 0;
-	while (str[i])
+	wc = 0;
+	while (str[i] != '\0')
 	{
-		if (str[i] != c)
-			len++;
-		if (len == max_len)
-			len = max_len;
-		if (str[i] == c)
-			len = 0;
-		i++;
-	}
-	return (max_len);
-}
-
-int	next_word_len(char *str, int i, char c)
-{
-	int	next_word_len;
-
-	next_word_len = 0;
-	while (str[i] == c && str[i])
-		i++;
-	while (str[i] != c && str[i])
-	{
-		next_word_len++;
-		i++;
-	}
-	return (next_word_len);
-}
-
-int	go_next_word(char *str, char c, int i)
-{
-	while (str[i] == c)
-		i++;
-	return (i);
-}
-
-char	**ft_strsplit(char const *s, char c)
-{
-	int		i;
-	int		itab;
-	int		jtab;
-	int		nxtwrdlen;
-	char	**tab;
-
-	i = 0;
-	itab = 0;
-	jtab = 0;
-	nxtwrdlen = 0;
-	tab = (char **)malloc(count_words((char *)s, c));
-	while (s[i] && jtab < count_words((char *)s, c))
-	{
-		nxtwrdlen = next_word_len((char *)s, i, c);
-		tab[jtab] = (char *)malloc(next_word_len((char *)s, i, c) + 1);
-		i = go_next_word((char *)s, c, i);
-		while (itab < nxtwrdlen)
-		{
-			tab[jtab][itab] = s[i];
-			itab++;
+		while (str[i] && is_separator(str[i], charset))
 			i++;
-		}
-		tab[jtab][itab] = '\0';
-		itab = 0;
-		jtab++;
+		if (str[i] != '\0')
+			wc++;
+		while (str[i] && !is_separator(str[i], charset))
+			i++;
 	}
-	tab[jtab] = 0;
-	return (tab);
+	return (wc);
+}
+
+int	in_word_len(const char *str, char *charset, int i)
+{
+	int	len;
+
+	len = 0;
+	while (str[i] && !(is_separator(str[i], charset)))
+	{
+		len++;
+		i++;
+	}
+	return (len);
+}
+
+char	*putword(const char *str, char *charset, int i)
+{
+	char	*rep;
+	int		len;
+	int		j;
+
+	j = 0;
+	len = in_word_len(str, charset, i);
+	rep = malloc(sizeof(char) * (len + 1));
+	while (str[i] && !(is_separator(str[i], charset)))
+	{
+		rep[j] = str[i];
+		j++;
+		i++;
+	}
+	rep[j] = '\0';
+	return (rep);
+}
+
+char **ft_split(const char *str, char c)
+{
+	char	**rep;
+	char	charset[2];
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	charset[0] = c;
+	charset[1] = '\0';
+	rep = malloc(sizeof(char *) * (wordcount(str, charset) + 1));
+	if (!(rep))
+		return (NULL);
+	while (str[i] != '\0')
+	{
+		while (str[i] != '\0' && is_separator(str[i], charset))
+			i++;
+		if (str[i] != '\0')
+			rep[j++] = putword(str, charset, i);
+		while (str[i] && !is_separator(str[i], charset))
+			i++;
+	}
+	rep[j] = 0;
+	return (rep);
 }
 
 // #include "libft.h"

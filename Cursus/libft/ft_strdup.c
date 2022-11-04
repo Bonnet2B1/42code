@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:13:13 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/10/31 18:17:15 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:38:33 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ char	*ft_strdup(const char *src)
 
 	i = 0;
 	dup = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	if (!dup)
+		return (NULL);
 	while (src[i])
 	{
 		dup[i] = src[i];
 		i++;
 	}
+	dup[i++] = '\0';
 	return (dup);
 }

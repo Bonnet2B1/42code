@@ -6,12 +6,11 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 21:45:53 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/03 14:56:39 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:22:41 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -20,7 +19,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while ((s1[i] || s2[i]) && i < n)
 	{
-		if (ft_isascii(s1[i]) == 0 || ft_isascii(s2[i]) == 0)
+		if (!ft_isascii(s1[i]) || !ft_isascii(s2[i]))
 			i++;
 		if ((s1[i] > s2[i]) || !s2[i])
 			return (1);

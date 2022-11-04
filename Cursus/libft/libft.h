@@ -117,6 +117,7 @@
 # define MAX_NBR 2147483647
 # define MIN_NBR -2147483648
 # include <string.h>
+# include <stdlib.h>
 
 typedef struct		s_list
 {
@@ -190,7 +191,7 @@ char				*ft_strtrim(char const *s);
 void				ft_memprint(void *ptr, size_t size);
 void				*my_memalloc(size_t size);
 char				*ft_itoa(int n);
-char				**ft_strsplit(char const *s, char c);
+char				**ft_split(const char *s, char c);
 int					ft_isspace(int c);
 
 /*

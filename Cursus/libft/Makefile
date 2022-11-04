@@ -35,6 +35,7 @@ SRCS		+= ft_strnequ.c
 SRCS		+= ft_strsub.c
 SRCS		+= ft_strjoin.c
 SRCS		+= ft_strtrim.c
+SRCS		+= ft_split.c
 
 SRCS		+= ft_chrcmp.c
 
@@ -84,7 +85,6 @@ SRCS		+= ft_isprime.c
 SRCS		+= ft_find_next_prime.c
 
 SRCS		+= ft_swap.c
-
 #	=== KEYS WORDS ===
 NAME		= libft.a
 

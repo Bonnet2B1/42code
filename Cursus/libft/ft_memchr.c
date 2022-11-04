@@ -11,21 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*char_s;
+	size_t	i;
 
-	char_s = (char *)s;
-	while (*char_s && n)
+	i = 0;
+	while (i < n)
 	{
-		if (*char_s == (char)c)
-			return (char_s);
-		char_s++;
-		n--;
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return (&((unsigned char *)s)[i]);
+		i++;
 	}
-	return (0);
+	return (NULL);
 }
 
 /* 
@@ -37,7 +35,7 @@ int	main(void)
 {
 	char s[] = "string abrakadabra";
 	char c = ' ';
-	unsigned int n = 7;
+	(unsigned int) n = 7;
 	printf("%s\n", (char*)memchr(s, c, n));
 	printf("%s\n", (char*)ft_memchr(s, c, n));
 	return (0);

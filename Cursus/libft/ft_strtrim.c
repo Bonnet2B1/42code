@@ -13,26 +13,17 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strtrim(char const *s)
+char *ft_strtrim(char const *s, char const *set)
 {
-	size_t	j;
 	size_t	i;
 	char	*str;
 
-	j = 0;
 	i = 0;
-	str = malloc(sizeof(char) * ft_strlen(s) + 1);
+	str = malloc(sizeof(char) * ft_strlen(set) + 1);
+	if (!str)
+		return (NULL);
 	while (s[i])
-	{
-		if (!ft_isspace(s[i]))
-		{
-			str[j] = s[i];
-			i++;
-			j++;
-		}
-		else
-			i++;
-	}
-	str[j] = '\0';
+	
+	str[++i] = '\0';
 	return (str);
 }

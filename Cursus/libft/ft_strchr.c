@@ -18,8 +18,7 @@ char	*ft_strchr(const char *s, int c)
 	char	*char_s;
 
 	char_s = (char *)s;
-	if (c > 127) 
-		return (NULL);
+	c = (char)c;
 	if (c == '\0')
 	{
 		return (&char_s[ft_strlen(s)]);
