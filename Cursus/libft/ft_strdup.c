@@ -6,12 +6,11 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:13:13 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/04 10:38:33 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/05 07:53:32 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(const char *src)
 {
