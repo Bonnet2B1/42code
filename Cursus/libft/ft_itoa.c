@@ -24,12 +24,12 @@ void	defsign(int *n, size_t *s_len, char **s)
 	}
 	if (*n < 0)
 		(*s_len)++;
-	*s = ft_strnew(*s_len + 1);
+	*s = ft_calloc(*s_len + 1, sizeof(char));
 }
 
 void	sisintmin(char **s)
 {
-	*s = ft_strnew(11);
+	*s = ft_calloc(11, sizeof(char));
 	*s = ("-2147483648");
 }
 

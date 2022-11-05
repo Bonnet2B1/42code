@@ -17,99 +17,112 @@
 // EXEMPLE : ft_strsplit("*salut*les***etudiants*", ’*’) renvoie
 // le tableau ["salut", "les", "etudiants"].
 
-#include "libft.h"	
+// #include "libft.h"	
 
-int	is_separator(char c, char *charset)
-{
-	int	i;
 
-	i = 0;
-	while (charset[i])
-	{
-		if (c == charset[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
 
-int	wordcount(const char *str, char *charset)
-{
-	int	i;
-	int	wc;
 
-	i = 0;
-	wc = 0;
-	while (str[i] != '\0')
-	{
-		while (str[i] && is_separator(str[i], charset))
-			i++;
-		if (str[i] != '\0')
-			wc++;
-		while (str[i] && !is_separator(str[i], charset))
-			i++;
-	}
-	return (wc);
-}
 
-int	in_word_len(const char *str, char *charset, int i)
-{
-	int	len;
 
-	len = 0;
-	while (str[i] && !(is_separator(str[i], charset)))
-	{
-		len++;
-		i++;
-	}
-	return (len);
-}
+////////////////////////////pas de moi !!!!!!!!!
 
-char	*putword(const char *str, char *charset, int i)
-{
-	char	*rep;
-	int		len;
-	int		j;
 
-	j = 0;
-	len = in_word_len(str, charset, i);
-	rep = malloc(sizeof(char) * (len + 1));
-	while (str[i] && !(is_separator(str[i], charset)))
-	{
-		rep[j] = str[i];
-		j++;
-		i++;
-	}
-	rep[j] = '\0';
-	return (rep);
-}
 
-char **ft_split(const char *str, char c)
-{
-	char	**rep;
-	char	charset[2];
-	int		i;
-	int		j;
 
-	i = 0;
-	j = 0;
-	charset[0] = c;
-	charset[1] = '\0';
-	rep = malloc(sizeof(char *) * (wordcount(str, charset) + 1));
-	if (!(rep))
-		return (NULL);
-	while (str[i] != '\0')
-	{
-		while (str[i] != '\0' && is_separator(str[i], charset))
-			i++;
-		if (str[i] != '\0')
-			rep[j++] = putword(str, charset, i);
-		while (str[i] && !is_separator(str[i], charset))
-			i++;
-	}
-	rep[j] = 0;
-	return (rep);
-}
+
+
+
+// int	is_separator(char c, char *charset)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (charset[i])
+// 	{
+// 		if (c == charset[i])
+// 			return (1);
+// 		i++;
+// 	}
+// 	return (0);
+// }
+
+// int	wordcount(const char *str, char *charset)
+// {
+// 	int	i;
+// 	int	wc;
+
+// 	i = 0;
+// 	wc = 0;
+// 	while (str[i] != '\0')
+// 	{
+// 		while (str[i] && is_separator(str[i], charset))
+// 			i++;
+// 		if (str[i] != '\0')
+// 			wc++;
+// 		while (str[i] && !is_separator(str[i], charset))
+// 			i++;
+// 	}
+// 	return (wc);
+// }
+
+// int	in_word_len(const char *str, char *charset, int i)
+// {
+// 	int	len;
+
+// 	len = 0;
+// 	while (str[i] && !(is_separator(str[i], charset)))
+// 	{
+// 		len++;
+// 		i++;
+// 	}
+// 	return (len);
+// }
+
+// char	*putword(const char *str, char *charset, int i)
+// {
+// 	char	*rep;
+// 	int		len;
+// 	int		j;
+
+// 	j = 0;
+// 	len = in_word_len(str, charset, i);
+// 	rep = malloc(sizeof(char) * (len + 1));
+// 	while (str[i] && !(is_separator(str[i], charset)))
+// 	{
+// 		rep[j] = str[i];
+// 		j++;
+// 		i++;
+// 	}
+// 	rep[j] = '\0';
+// 	return (rep);
+// }
+
+// char **ft_split(const char *str, char c)
+// {
+// 	char	**rep;
+// 	char	charset[2];
+// 	int		i;
+// 	int		j;
+
+// 	i = 0;
+// 	j = 0;
+// 	charset[0] = c;
+// 	charset[1] = '\0';
+// 	rep = malloc(sizeof(char *) * (wordcount(str, charset) + 1));
+// 	if (!(rep))
+// 		return (NULL);
+// 	while (str[i] != '\0')
+// 	{
+// 		while (str[i] != '\0' && is_separator(str[i], charset))
+// 			i++;
+// 		if (str[i] != '\0')
+// 			rep[j++] = putword(str, charset, i);
+// 		while (str[i] && !is_separator(str[i], charset))
+// 			i++;
+// 	}
+// 	rep[j] = 0;
+// 	return (rep);
+// }
 
 // #include "libft.h"
 // #include <stdio.h>

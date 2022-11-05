@@ -14,11 +14,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-char	*ft_strnew(size_t size)
+void *ft_calloc(size_t count, size_t size)
 {
-	char	*s;
+	unsigned char	*s;
 
-	s = malloc(sizeof(char) * (size + 1));
-	ft_memset(s, '\0', size + 1);
+	s = malloc(count * size);
+	if (!s)
+		return (NULL);
+	ft_memset(s, '\0', count * size);
 	return (s);
 }
