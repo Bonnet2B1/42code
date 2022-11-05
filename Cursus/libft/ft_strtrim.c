@@ -13,61 +13,37 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int    findlastcharofforstoccu(const char *str, const char *to_find)
-{
-    int i;
-    int j;
-    int jgoal;
+// int    ft_start(const char *str, const char *to_find)
+// {
+//     int start;
+//     int j;
 
-    i = 0;
-	jgoal = strlen(to_find);
-    j = 0;
+//     start = 0;
+//     j = 0;
+// 	while(str[start] == to_find[j] && to_find[j])
+// 	{
+// 		start++;
+// 		j++;
+// 	}
+// 	if (j)
+// 		return (start + 1);
+//     return (0);
+// }
 
-    while (str[i])
-    {
-        while (str[i] == to_find[j] || j == jgoal)
-        {
-            if (j == jgoal)
-                return (i);
-            i++;
-            j++;
-        }
-        j = 0;
-        i++;
-    }
-    return (0);
-}
+// // int    skiplastoccu(const char *str, const char *to_find)
+// // {
 
-int    findfirstcharoflastoccu(const char *str, const char *to_find)
-{
-    int i;
-    int j;
+// // }
 
-    i = ft_strlen(str) -1;
-    j = ft_strlen(to_find) -1;
-
-    while (i >= 0)
-    {
-        while (str[i] == to_find[j] || j == -1)
-        {
-            if (j == -1)
-                return (i);
-            i--;
-            j--;
-        }
-        j = ft_strlen(to_find) -1;
-        i--;
-    }
-    return (0);
-}
-
-char    *ft_strtrim(char const *s, char const *set)
-{
-    char *str;
-    unsigned int start = findlastcharofforstoccu(s, set) + 1;
-    size_t len = findfirstcharoflastoccu(s, set) + 2 - start;
-    str = ft_strsub(s, start, len);
-    if (!str)
-        return (NULL);
-    return (str);
-}
+// char    *ft_strtrim(char const *s, char const *set)
+// {
+//     char *str;
+//     unsigned int start = ft_start(s, set);
+// 	if (!start)
+// 		return ("start vaut rien");
+//     size_t len = 16;
+//     str = ft_substr(s, start, len);
+//     if (!str)
+//         return (NULL);
+//     return (str);
+// }

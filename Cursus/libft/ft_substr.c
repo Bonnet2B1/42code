@@ -12,8 +12,9 @@
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*cpy;
 	size_t	i;
@@ -24,8 +25,10 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if ((start + len >= slen) || !s)
 		return (0);
 	cpy = ft_strnew(len);
+	
 	while (len)
 	{
+		printf("%c", s[i]);
 		cpy[i] = s[start - 1];
 		i++;
 		start++;

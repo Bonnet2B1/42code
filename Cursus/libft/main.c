@@ -4,9 +4,9 @@
 
 int main() 
 {
-  char *str = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !";
-  char *to_trim = " \n\t";
+  char *str = "**Hello **World !**";
+  char *to_trim = "*";
   
-  printf("%s", ft_strtrim(str, to_trim)); 
+  printf("\n%s\n\n", ft_strtrim(str, to_trim)); 
   return 0;
 }

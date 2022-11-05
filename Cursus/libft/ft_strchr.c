@@ -20,9 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	char_s = (char *)s;
 	c = (char)c;
 	if (c == '\0')
-	{
 		return (&char_s[ft_strlen(s)]);
-	}
 	i = 0;
 	while (char_s[i])
 	{
