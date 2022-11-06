@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	defsign(int *n, size_t *s_len, char **s)
+void	defsign(long *n, int *s_len, char **s)
 {
 	int	n_cpy;
 
@@ -24,47 +24,39 @@ void	defsign(int *n, size_t *s_len, char **s)
 	}
 	if (*n < 0)
 		(*s_len)++;
-	*s = ft_calloc(*s_len + 1, sizeof(char));
-}
-
-void	intmin(char **s)
-{
-	*s = ft_calloc(11, sizeof(char));
-	*s = ("-2147483648");
+	*s = ft_calloc(*s_len + 2, sizeof(char));
 }
 
 char	*ft_itoa(int n)
 {
-	size_t	s_len;
+	int	s_len;
 	char	*s;
+	long	nb;
 
-	if (n == -2147483648)
-	{
-		intmin(&s);
-		return (s);
-	}
-	defsign(&n, &s_len, &s);
+	nb = n;
+	s_len = 0;
+	defsign(&nb, &s_len, &s);
 	if (!s)
 		return NULL;
-	if (n == 0)
+	if (nb == 0)
 		s[0] = '0';
-	if (n < 0)
+	if (nb < 0)
 	{
 		s[0] = '-';
-		n = -n;
+		nb = -nb;
 	}
-	while (n)
+	while (nb)
 	{
-		s[s_len] = (n % 10) + 48;
+		s[s_len] = (nb % 10) + 48;
 		s_len--;
-		n /= 10;
+		nb /= 10;
 	}
 	return (s);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-	printf("Le nombre retourne est : %s\n", ft_itoa(2147483647));
-}
+// int main()
+// {
+// 	printf("Le nombre retourne est : %s\n", ft_itoa(-2147483648));
+// }
