@@ -20,17 +20,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	slen = ft_strlen(s);
-	cpy = malloc(len, sizeof(char));
-	if ((start + len >= slen) || !s || !cpy)
-		return (0);
-	
-	while (len)
-	{
-		cpy[i] = s[start - 1];
-		i++;
-		start++;
-		len--;
-	}
+	if (len > slen)
+		len = slen;
+	if(start >= slen)
+		start = slen;
+	if (!s)
+		return (NULL);
+	cpy = malloc(sizeof(char) * len + 1);
+	if (!cpy)
+		return (NULL);
+	while (len--)
+		cpy[i++] = s[start++];
+	cpy[i] = '\0';
 	return (cpy);
 }
 
