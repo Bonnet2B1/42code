@@ -11,39 +11,41 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-// int    ft_start(const char *str, const char *to_find)
-// {
-//     int start;
-//     int j;
+int getstart(char *s, char *set)
+{
+	int i;
+	int j;
 
-//     start = 0;
-//     j = 0;
-// 	while(str[start] == to_find[j] && to_find[j])
-// 	{
-// 		start++;
-// 		j++;
-// 	}
-// 	if (j)
-// 		return (start + 1);
-//     return (0);
-// }
+	i = 0;
+	j = 0;
+	while (s[i++] && set[j])
+	{
+		j = 0;
+		while (s[i++] == set[j++] && set[j++]){}
+	}
+	if (!set[j])
+		return (i);
+	return (0);
+}
 
-// // int    skiplastoccu(const char *str, const char *to_find)
-// // {
+char	*ft_strtrim(const char *s, const char *set)
+{
+	int i;
+	
+	i = 0;
+	free((void *)s);
+	free((void *)set);
+	return NULL;
+}
 
-// // }
+#include <stdio.h>
 
-// char    *ft_strtrim(char const *s, char const *set)
-// {
-//     char *str;
-//     unsigned int start = ft_start(s, set);
-// 	if (!start)
-// 		return ("start vaut rien");
-//     size_t len = 16;
-//     str = ft_substr(s, start, len);
-//     if (!str)
-//         return (NULL);
-//     return (str);
-// }
+int main() 
+{
+  char *str = "**Hello **World !**";
+  char *to_trim = "*";
+  
+  printf("\n%d\n\n", getstart(str, to_trim)); 
+  return 0;
+}
