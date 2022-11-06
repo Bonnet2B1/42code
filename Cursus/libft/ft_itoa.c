@@ -27,7 +27,7 @@ void	defsign(int *n, size_t *s_len, char **s)
 	*s = ft_calloc(*s_len + 1, sizeof(char));
 }
 
-void	sisintmin(char **s)
+void	intmin(char **s)
 {
 	*s = ft_calloc(11, sizeof(char));
 	*s = ("-2147483648");
@@ -40,10 +40,12 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 	{
-		sisintmin(&s);
+		intmin(&s);
 		return (s);
 	}
 	defsign(&n, &s_len, &s);
+	if (!s)
+		return NULL;
 	if (n == 0)
 		s[0] = '0';
 	if (n < 0)
@@ -60,7 +62,9 @@ char	*ft_itoa(int n)
 	return (s);
 }
 
-// int main()
-// {
-// 	printf("Le nombre retourne est : %s\n", ft_itoa(0));
-// }
+#include <stdio.h>
+
+int main()
+{
+	printf("Le nombre retourne est : %s\n", ft_itoa(2147483647));
+}

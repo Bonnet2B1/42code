@@ -39,13 +39,13 @@ char	*ft_strtrim(const char *s, const char *set)
 	return NULL;
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main() 
-{
-  char *str = "**Hello **World !**";
-  char *to_trim = "*";
+// int main() 
+// {
+//   char *str = "**Hello **World !**";
+//   char *to_trim = "*";
   
-  printf("\n%d\n\n", getstart(str, to_trim)); 
-  return 0;
-}
+//   printf("\n%d\n\n", getstart(str, to_trim)); 
+//   return 0;
+// }
