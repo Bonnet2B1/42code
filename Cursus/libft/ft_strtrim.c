@@ -26,10 +26,10 @@ int getend(const char *s, const char *set)
 {
 	int i;
 
-	i = ft_strlen(s) + 1;
-	while (ft_strchr(set, s[i]))
-		i--; 
-	return (i - getstart(s, set));
+	i = ft_strlen(s);
+	while (ft_strrchr(set, s[i]))
+		i--;
+	return (i - getstart(s, set) + 1);
 }
 
 char	*ft_strtrim(const char *s, const char *set)
@@ -44,17 +44,17 @@ char	*ft_strtrim(const char *s, const char *set)
 
 #include <stdio.h>
 
-int main() 
-{
-  char *str = "&* Hello **World !*& ";
-  char *to_trim = "& *";
+// int main() 
+// {
+//   char *str = "&* Hello **World !*& ";
+//   char *to_trim = "& *";
   
-  printf("Début de la chaine : %d\n", getstart(str, to_trim)); 
-  printf("Fin de la chaine   : %d\n", getend(str, to_trim)); 
-  printf("Chaine après trim  : %s\n\n", ft_strtrim(str, to_trim)); 
+//   printf("Début de la chaine : %d\n", getstart(str, to_trim)); 
+//   printf("Fin de la chaine   : %d\n", getend(str, to_trim)); 
+//   printf("Chaine après trim  : %s\n\n", ft_strtrim(str, to_trim)); 
 
-  return 0;
-}
+//   return 0;
+// }
 
 // "xxxz  test with x and z and x .  zx  xx z", "z x"
 // expected: "test with x and z and x ."
