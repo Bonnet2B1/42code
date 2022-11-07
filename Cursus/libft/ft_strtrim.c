@@ -14,28 +14,29 @@
 
 int getstart(const char *s, const char *set)
 {
-	int i;
+	int start;
 
-	i = 0;
-	while (ft_strchr(set, s[i]))
-		i++; 
-	return (i);
+	start = 0;
+	while (ft_strchr(set, s[start]))
+		start++; 
+	return (start);
 }
 
 int getend(const char *s, const char *set)
 {
-	int i;
+	int end;
 
-	i = ft_strlen(s);
-	while (ft_strrchr(set, s[i]))
-		i--;
-	return (i - getstart(s, set) + 1);
+	end = ft_strlen(s);
+	while (ft_strrchr(set, s[end]))
+		end--;
+	return (end - getstart(s, set) + 1);
 }
 
 char	*ft_strtrim(const char *s, const char *set)
 {
 	char *str;
-
+	if (s[0] == '\0'|| set[0] == '\0')
+		return (ft_strdup(s));
 	str = ft_substr(s, getstart(s, set), getend(s, set));
 	if (!str)
 		return NULL;
