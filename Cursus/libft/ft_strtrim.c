@@ -12,40 +12,50 @@
 
 #include "libft.h"
 
-int getstart(char *s, char *set)
+int getstart(const char *s, const char *set)
 {
 	int i;
-	int j;
 
 	i = 0;
-	j = 0;
-	while (s[i++] && set[j])
-	{
-		j = 0;
-		while (s[i++] == set[j++] && set[j++]){}
-	}
-	if (!set[j])
-		return (i);
-	return (0);
+	while (ft_strchr(set, s[i]))
+		i++; 
+	return (i);
+}
+
+int getend(const char *s, const char *set)
+{
+	int i;
+
+	i = ft_strlen(s) + 1;
+	while (ft_strchr(set, s[i]))
+		i--; 
+	return (i - getstart(s, set));
 }
 
 char	*ft_strtrim(const char *s, const char *set)
 {
-	int i;
-	
-	i = 0;
-	free((void *)s);
-	free((void *)set);
-	return NULL;
+	char *str;
+
+	str = ft_substr(s, getstart(s, set), getend(s, set));
+	if (!str)
+		return NULL;
+	return (str);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main() 
-// {
-//   char *str = "**Hello **World !**";
-//   char *to_trim = "*";
+int main() 
+{
+  char *str = "&* Hello **World !*& ";
+  char *to_trim = "& *";
   
-//   printf("\n%d\n\n", getstart(str, to_trim)); 
-//   return 0;
-// }
+  printf("Début de la chaine : %d\n", getstart(str, to_trim)); 
+  printf("Fin de la chaine   : %d\n", getend(str, to_trim)); 
+  printf("Chaine après trim  : %s\n\n", ft_strtrim(str, to_trim)); 
+
+  return 0;
+}
+
+// "xxxz  test with x and z and x .  zx  xx z", "z x"
+// expected: "test with x and z and x ."
+// got: "xxxz  test with x and z and x .  zx  xx z"
