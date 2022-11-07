@@ -18,7 +18,7 @@ void *ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*s;
 
-	s = malloc(count * size);
+	s = malloc(sizeof(char) * (count * size));
 	if (!s)
 		return (NULL);
 	ft_memset(s, '\0', count * size);

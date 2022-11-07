@@ -145,15 +145,17 @@
 #include "libft.h"	
 #include <stdio.h>
 
-int nextlen(const char *s, int *i, char c)
+int nextlen(const char *s, int i, char c)
 {
 	int len;
 
 	len = 0;
-	while(s[*i] != c && s[*i])
+	while(s[i] == c)
+		i++;
+	while(s[i] != c && s[i])
 	{
 		len++;
-		(*i)++;
+		i++;
 	}
 	return (len);
 }
@@ -163,32 +165,32 @@ int wordcount(const char *s, char c)
 	int count;
 	int i;
 
-		printf("salut1");
 	i = 0;
 	count = 0;
-	while (s[i])
+	while (s[i - 1] || i == 0)
 	{
-		if (s[i - 1] != c && s[i] == c)
+		if (i != 0 && s[i - 1] != c && (s[i] == c || !s[i]))
 			count++;
-		i ++;
+		i++;
 	}
-		printf("salut2");
 	return (count);
 }
 
-char *nextword(const char *s, int *i, int len)
+char *nextword(const char *s, int *i, char c, int len)
 {
 	char *cpy;
 	int y;
 
-		printf("salut4");
 	y = 0;
+	while(s[*i] == c)
+		(*i)++;
 	cpy = ft_calloc(len + 1, sizeof(char));
 	if (!cpy)
 		return (NULL);
-	while (len--)
+	while (len)
 	{
-	cpy[y++] = s[(*i)++];
+		cpy[y++] = s[(*i)++];
+		len--;
 	}	
 	return (cpy);
 }
@@ -197,8 +199,9 @@ void freeall(char **tab)
 {
 	int y;
 	y = 0;
-	while(tab[y--])
+	while(tab[y])
 		free(tab[y]);
+		y++;
 	free(tab);
 }
 
@@ -206,33 +209,49 @@ char **ft_split(const char *s, char c)
 {
 	int i;
 	int y;
+	int word;
 	char **tab;
-	
+
 	i = 0;
 	y = 0;
-	tab = ft_calloc(wordcount(s, c) + 1, sizeof(char) );
+	if (!s)
+		return (NULL);
+	word = wordcount(s, c);
+	tab = malloc(sizeof(char *) * (word + 1));
 	if (!tab)
-		freeall(tab);
-	while (tab[y] && y <= wordcount(s, c))
+	 	return (NULL);
+	while (y < word)
 	{
-		*tab[y] = *nextword(s, &i, nextlen(s, &i, c));
-		y ++;
+		tab[y] = nextword(s, &i, c,nextlen(s, i, c));
+		if (!tab[y])
+		{
+			freeall(tab);
+			// y--;
+			// while (y >= 0)
+			// 	free(tab[y--]);
+			// return NULL;
 
+
+			// À voir avec emma qui a eu le mm probleme
+		}
+		y++;
 	}
+	tab[word] = NULL;
 	return (tab);
 }
 
 
-int main() 
-{
-  int i = 0;
-  char *str = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.";
-  char c = ' ';
-  char **tab = ft_split(str, c);
-  while(tab[i])
-  {
-    printf("%s\n", tab[i]);
-	i++;
-  }  
-  return 0;
-}
+// int main() 
+// {
+// 	int y = 0;
+// 	char *s = "Hello!";
+// 	char c = ' ';
+// 	char **tab = ft_split(s, c);
+// 	while(tab[y])
+// 	{
+// 		ft_putstr(tab[y]);
+// 		ft_putchar('\n');
+// 		y++;
+// 	}  
+// 	return 0;
+// }
