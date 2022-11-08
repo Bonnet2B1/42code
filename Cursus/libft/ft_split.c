@@ -245,8 +245,8 @@ char **ft_split(const char *s, char c)
 // {
 // 	int y = 0;
 // 	char *s = "Hello!";
-// 	char c = ' ';
-// 	char **tab = ft_split(s, c);
+// //	char c = '\0';
+// 	char **tab = ft_split(s, '\0');
 // 	while(tab[y])
 // 	{
 // 		ft_putstr(tab[y]);
