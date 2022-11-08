@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:33:10 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/08 09:56:11 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:24:18 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,21 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 	i = 0;
 	if (n > ft_strlen(dst) - 1)
 		n = ft_strlen(dst) - 1; 
-	while (src[i] && dest[i + 1] && n--)
+	while (src[i] && n--)
 	{
-		dest[i] = src[i++];
+		dst[i] = src[i];
+		i++;
 	}
+	dst[i] = '\0';
 	return (ft_strlen(dst));
+}
+
+int main()
+{
+	char *src = "Hello World !";
+	char *dst = "blablacar";
+	ft_putstr(ft_itoa(ft_strlcpy(dst, src, 5)));
+	ft_putchar('\n');
+	ft_putstr(dst);
+	ft_putchar('\n');
 }
