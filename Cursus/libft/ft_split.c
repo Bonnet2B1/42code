@@ -2,25 +2,28 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2022/11/04 09:42:20 by edelarbr          #+#    #+#             */
 /*   Updated: 2022/11/04 09:42:20 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"	
+#include "libft.h"
 #include <stdio.h>
 
-size_t nextlen(const char *s, size_t i, char c)
+size_t	nextlen(const char *s, size_t i, char c)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
-	while(s[i] == c)
+	while (s[i] == c)
 		i++;
-	while(s[i] != c && s[i])
+	while (s[i] != c && s[i])
 	{
 		len++;
 		i++;
@@ -28,10 +31,10 @@ size_t nextlen(const char *s, size_t i, char c)
 	return (len);
 }
 
-size_t wordcount(const char *s, char c)
+size_t	wordcount(const char *s, char c)
 {
-	size_t count;
-	size_t i;
+	size_t	count;
+	size_t	i;
 
 	i = 1;
 	count = 0;
@@ -44,13 +47,13 @@ size_t wordcount(const char *s, char c)
 	return (count);
 }
 
-char *nextword(const char *s, size_t *i, char c, size_t len)
+char	*nextword(const char *s, size_t *i, char c, size_t len)
 {
-	char *cpy;
-	size_t y;
+	char	*cpy;
+	size_t	y;
 
 	y = 0;
-	while(s[*i] == c)
+	while (s[*i] == c)
 		(*i)++;
 	cpy = malloc(sizeof(char) * (len + 1));
 	if (!cpy)
@@ -64,24 +67,26 @@ char *nextword(const char *s, size_t *i, char c, size_t len)
 	return (cpy);
 }
 
-char **freeall(char **tab, size_t indice)
+char	**freeall(char **tab, size_t indice)
 {
-	size_t y = 0;
-	while(y <= indice)
+	size_t	y;
+
+	y = 0;
+	while (y <= indice)
 	{
 		free(tab[y]);
 		y++;
-	}	
+	}
 	free(tab);
 	return (tab);
 }
 
-char **ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
-	size_t i;
-	size_t y;
-	size_t word;
-	char **tab;
+	size_t	i;
+	size_t	y;
+	size_t	word;
+	char	**tab;
 
 	i = 0;
 	y = 0;
@@ -90,10 +95,10 @@ char **ft_split(const char *s, char c)
 	word = wordcount(s, c);
 	tab = malloc(sizeof(char *) * (word + 1));
 	if (!tab)
-	 	return (NULL);
+		return (NULL);
 	while (y < word)
 	{
-		tab[y] = nextword(s, &i, c,nextlen(s, i, c));
+		tab[y] = nextword(s, &i, c, nextlen(s, i, c));
 		if (!tab[y])
 			return (freeall(tab, y));
 		y++;
@@ -101,19 +106,3 @@ char **ft_split(const char *s, char c)
 	tab[word] = NULL;
 	return (tab);
 }
-
-
-// int main() 
-// {
-// 	int y = 0;
-// 	char *s = "Hello!";
-// //	char c = '\0';
-// 	char **tab = ft_split(s, '\0');
-// 	while(tab[y])
-// 	{
-// 		ft_putstr(tab[y]);
-// 		ft_putchar('\n');
-// 		y++;
-// 	}  
-// 	return 0;
-// }

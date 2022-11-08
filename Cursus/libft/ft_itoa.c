@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 10:59:22 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/02 10:59:22 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/11/08 14:13:29 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/08 14:13:29 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	defsign(long *n, int *s_len, char **s)
 
 char	*ft_itoa(int n)
 {
-	int	s_len;
+	int		s_len;
 	char	*s;
 	long	nb;
 
@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 	s_len = 0;
 	defsign(&nb, &s_len, &s);
 	if (!s)
-		return NULL;
+		return (NULL);
 	if (nb == 0)
 		s[0] = '0';
 	if (nb < 0)

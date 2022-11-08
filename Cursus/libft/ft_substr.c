@@ -22,11 +22,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	slen = ft_strlen(s);
-	if (len > slen)
-		len = slen;
-	if(start >= slen)
-		start = slen;
-	cpy = malloc(sizeof(char) * len + 1);
+	if (start >= slen)
+		len = 0;
+	if (slen - start < len)
+		len = slen - start;
+	cpy = (char *)malloc(sizeof(char) * len + 1);
 	if (!cpy)
 		return (NULL);
 	while (len-- && s[start])
