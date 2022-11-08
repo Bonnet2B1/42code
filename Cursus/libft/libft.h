@@ -151,6 +151,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 size_t				ft_strlen(const char *s);
 char				*ft_strcpy(char *s1, const char *s2);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
+size_t				ft_strlcpy(char *dst, const char *src, size_t n);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);
 size_t				ft_strlcat(char *dest, const char *src, size_t n);

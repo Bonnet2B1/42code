@@ -17,6 +17,7 @@ SRCS		+= ft_strchr.c
 SRCS		+= ft_strcmp.c
 SRCS		+= ft_strncmp.c
 SRCS		+= ft_strcpy.c
+SRCS		+= ft_strlcpy.c
 SRCS		+= ft_strdup.c
 SRCS		+= ft_strlcat.c
 SRCS		+= ft_strncat.c
