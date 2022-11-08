@@ -78,7 +78,7 @@ char	**freeall(char **tab, size_t indice)
 		y++;
 	}
 	free(tab);
-	return (tab);
+	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
