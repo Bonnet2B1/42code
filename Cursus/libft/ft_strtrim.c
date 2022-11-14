@@ -2,14 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
-/*   Created: 2022/11/05 08:14:50 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/05 08:14:50 by edelarbr         ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/14 16:14:44 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/14 16:14:44 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +44,16 @@ char	*ft_strtrim(const char *s, const char *set)
 	return (str);
 }
 
-// int main()
-// {
-//   char *str = "&* Hello **World !*& ";
-//   char *to_trim = "& *";
+#include <stdio.h>
 
-//   printf("Début de la chaine : %d\n", getstart(str, to_trim));
-//   printf("Fin de la chaine   : %d\n", getend(str, to_trim));
-//   printf("Chaine après trim  : %s\n\n", ft_strtrim(str, to_trim));
+int main()
+{
+  char *str = "&* *Hello **World !*& ";
+  char *set= "& *";
 
-//   return (0);
-// }
+  printf("Début de la chaine : %d\n", getstart(str, set));
+  printf("Fin de la chaine   : %d\n", getend(str, set));
+  printf("Chaine après trim  : %s\n\n", ft_strtrim(str, set));
 
-// "xxxz  test with x and z and x .  zx  xx z", "z x"
-// expected: "test with x and z and x ."
-// got: "xxxz  test with x and z and x .  zx  xx z"
+  return (0);
+}
