@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
@@ -21,7 +20,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	if (!s)
 		return (NULL);
 	str = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1);
-	if (!(str))
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (s[i])
@@ -39,12 +38,12 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 // #include <strings.h>
 // #include <stdlib.h>
 
-// char otoz(unsigned int i, char c)
-// {
-// 	if (c == 'o' && i < 100 && i > 0)
-// 		c = 'z';
-// 	return (c);
-// }
+char otoz(unsigned int i, char c)
+{
+	if (c == 'o' && i < 100 && i > 0)
+		c = 'z';
+	return (c);
+}
 
 // int main()
 // {

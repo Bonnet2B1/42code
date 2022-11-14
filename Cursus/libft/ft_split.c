@@ -14,7 +14,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	nextlen(const char *s, size_t i, char c)
 {

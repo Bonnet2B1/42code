@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = 0;
 	if (slen - start < len)
 		len = slen - start;
-	cpy = (char *)malloc(sizeof(char) * len + 1);
+	cpy = malloc(sizeof(char) * len + 1);
 	if (!cpy)
 		return (NULL);
 	while (len-- && s[start])
@@ -34,10 +34,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	cpy[i] = '\0';
 	return (cpy);
 }
-
-/* 
-int	main(void)
-{
-	printf("Retour de ft_strsub : %s", ft_strsub("Hello World !", 7, 5));
-}
-*/

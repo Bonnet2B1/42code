@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	defsign(long *n, int *s_len, char **s)
+static void	defsign(long *n, int *s_len, char **s)
 {
 	int	n_cpy;
 
