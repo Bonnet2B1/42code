@@ -1,8 +1,6 @@
 {
   "version": "0.2.0",
   "configurations": [
-    
-
     {
       "type": "lldb",
       "request": "launch",
@@ -18,8 +16,8 @@
       "args": [],
       "stopAtEntry": true,
       "externalConsole": false,
-      "cwd": "/Users/edelarbr/Documents/GitHub/42code",
-      "program": "/Users/edelarbr/Documents/GitHub/42code/Cursus/libft/a.out",
+      "cwd": "/Users/edelarbr/Documents/42code",
+      "program": "/Users/edelarbr/Documents/42code/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb"
     }

@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 17:39:23 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/10/31 18:17:47 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:06:16 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strstr(const char *str, const char *to_find)
 	str_not_const = (char *)str;
 	i = 0;
 	ii = 0;
-	if (to_find[ii] == '\0')
+	if (!to_find[ii])
 		return (str_not_const);
 	while (str_not_const[i])
 	{

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	getstart(const char *s, const char *set)
+static int	getstart(const char *s, const char *set)
 {
 	int	start;
 
@@ -22,7 +22,7 @@ int	getstart(const char *s, const char *set)
 	return (start);
 }
 
-int	getend(const char *s, const char *set)
+static int	getend(const char *s, const char *set)
 {
 	int	end;
 
@@ -34,26 +34,19 @@ int	getend(const char *s, const char *set)
 
 char	*ft_strtrim(const char *s, const char *set)
 {
-	char	*str;
-
-	if (s[0] == '\0' || set[0] == '\0')
-		return (ft_strdup(s));
-	str = ft_substr(s, getstart(s, set), getend(s, set));
-	if (!str)
-		return (NULL);
-	return (str);
+	return (ft_substr(s, getstart(s, set), getend(s, set)));
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-  char *str = "&* *Hello **World !*& ";
-  char *set= "& *";
+// int main()
+// {
+//   char *str = "&* *Hello **World !*& ";
+//   char *set= "& *";
 
-  printf("Début de la chaine : %d\n", getstart(str, set));
-  printf("Fin de la chaine   : %d\n", getend(str, set));
-  printf("Chaine après trim  : %s\n\n", ft_strtrim(str, set));
+//   printf("Début de la chaine : %d\n", getstart(str, set));
+//   printf("Fin de la chaine   : %d\n", getend(str, set));
+//   printf("Chaine après trim  : %s\n\n", ft_strtrim(str, set));
 
-  return (0);
-}
+//   return (0);
+// }
