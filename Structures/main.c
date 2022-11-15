@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:54:12 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/14 17:54:39 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/15 08:28:47 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	Identite	utilisateur[2];
+	struct Identite	utilisateur[2];
 
 	utilisateur[0].name = "Elias";
 	utilisateur[0].age = 21;
