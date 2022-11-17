@@ -10,81 +10,90 @@
 #                                                                              #
 # **************************************************************************** #
 
-#	=== FUNCTIONS ===
-SRC		+= ft_strlen.c
-SRC		+= ft_strcat.c
-SRC		+= ft_strchr.c
-SRC		+= ft_strcmp.c
-SRC		+= ft_strncmp.c
-SRC		+= ft_strcpy.c
-SRC		+= ft_strlcpy.c
-SRC		+= ft_strdup.c
-SRC		+= ft_strlcat.c
-SRC		+= ft_strncat.c
-SRC		+= ft_strncpy.c
-SRC		+= ft_strnstr.c
-SRC		+= ft_strrchr.c
-SRC		+= ft_strstr.c
-SRC		+= ft_strcapitalize.c
-SRC		+= ft_calloc.c
-SRC		+= ft_strdel.c
-SRC		+= ft_strclr.c
-SRC		+= ft_striter.c
-SRC		+= ft_striteri.c
-SRC		+= ft_substr.c
-SRC		+= ft_strjoin.c
-SRC		+= ft_strtrim.c
-SRC		+= ft_strmapi.c
-SRC		+= ft_split.c
+#
+## Perso
+#
 
-SRC		+= ft_chrcmp.c
+SRCS			+= ft_chrcmp.c
+SRCS			+= ft_isprime.c
 
-SRC		+= ft_putstr.c
-SRC		+= ft_putchar.c
-SRC		+= ft_putnbr.c
-SRC		+= ft_putendl.c
-SRC		+= ft_putchar_fd.c
-SRC		+= ft_putstr_fd.c
-SRC		+= ft_putendl_fd.c
-SRC		+= ft_putnbr_fd.c
+#
+## First Part
+#
 
-SRC		+= ft_strisprint.c
-SRC		+= ft_strisalnum.c
-SRC		+= ft_strisalpha.c
-SRC		+= ft_strisascii.c
-SRC		+= ft_strisdigit.c
-SRC		+= ft_isprint.c
-SRC		+= ft_isupper.c
-SRC		+= ft_islower.c
-SRC		+= ft_isalnum.c
-SRC		+= ft_isalpha.c
-SRC		+= ft_isascii.c
-SRC		+= ft_isdigit.c
-SRC		+= ft_isspace.c
+SRCS			+= ft_bzero.c
+SRCS			+= ft_memset.c
+SRCS			+= ft_memmove.c
+SRCS			+= ft_memccpy.c
+SRCS			+= ft_memcpy.c
+SRCS			+= ft_isprint.c
+SRCS			+= ft_isalnum.c
+SRCS			+= ft_isdigit.c
+SRCS			+= ft_isalpha.c
+SRCS			+= ft_islower.c
+SRCS			+= ft_isupper.c
+SRCS			+= ft_isascii.c
+SRCS			+= ft_toupper.c
+SRCS			+= ft_tolower.c
+SRCS			+= ft_atoi.c
+SRCS			+= ft_memcmp.c
+SRCS			+= ft_memchr.c
+SRCS			+= ft_strlen.c
+SRCS			+= ft_strcpy.c
+SRCS			+= ft_strncpy.c
+SRCS			+= ft_strlcpy.c
+SRCS			+= ft_strncat.c
+SRCS			+= ft_strcat.c
+SRCS			+= ft_strlcat.c
+SRCS			+= ft_strchr.c
+SRCS			+= ft_strrchr.c
+SRCS			+= ft_strstr.c
+SRCS			+= ft_strnstr.c
+SRCS			+= ft_strcmp.c
+SRCS			+= ft_strncmp.c
+SRCS			+= ft_strdup.c
 
-SRC		+= ft_memchr.c
-SRC		+= ft_memcmp.c
-SRC		+= ft_memccpy.c
-SRC		+= ft_memcpy.c
-SRC		+= ft_memmove.c
-SRC		+= ft_memset.c
-SRC		+= ft_bzero.c
-SRC		+= ft_memalloc.c
-SRC		+= ft_memdel.c
+#
+## Second part
+#
 
-SRC		+= ft_atoi.c
-SRC		+= ft_tolower.c
-SRC		+= ft_toupper.c
-SRC		+= ft_itoa.c
+SRCS			+= ft_putchar.c
+SRCS			+= ft_putstr.c
+SRCS			+= ft_putchar_fd.c
+SRCS			+= ft_putstr_fd.c
+SRCS			+= ft_putendl.c
+SRCS			+= ft_putendl_fd.c
+SRCS			+= ft_putnbr.c
+SRCS			+= ft_memalloc.c
+SRCS			+= ft_putnbr_fd.c
+SRCS			+= ft_memdel.c
+SRCS			+= ft_calloc.c
+SRCS			+= ft_strdel.c
+SRCS			+= ft_strclr.c
+SRCS			+= ft_striter.c
+SRCS			+= ft_striteri.c
+SRCS			+= ft_strmap.c
+SRCS			+= ft_strmapi.c
+SRCS			+= ft_substr.c
+SRCS			+= ft_strjoin.c
+SRCS			+= ft_strtrim.c
+SRCS			+= ft_itoa.c
+SRCS			+= ft_split.c
+SRCS			+= ft_isspace.c
 
-SRC		+= ft_factorial.c
-SRC		+= ft_power.c
-SRC		+= ft_fibonacci.c
-SRC		+= ft_sqrt.c
-SRC		+= ft_isprime.c
-SRC		+= ft_find_next_prime.c
+#
+## Part bonus
+#
 
-SRC		+= ft_swap.c
+SRCS_BONUS		+= ft_lstnew_bonus.c
+SRCS_BONUS		+= ft_lstadd_front_bonus.c
+SRCS_BONUS		+= ft_lstsize_bonus.c
+SRCS_BONUS		+= ft_lstlast_bonus.c
+SRCS_BONUS		+= ft_lstadd_back_bonus.c
+#SRCS_BONUS		+= ft_lstdelone_bonus.c
+#SRCS_BONUS		+= ft_lstclear_bonus.c
+#SRCS_BONUS		+= ft_lstiter_bonus.c
+#SRCS_BONUS		+= ft_lstmap_bonus.c
 
 #	=== FLAGS ===
 CFLAGS		+= -Wall
@@ -96,7 +105,8 @@ CFLAGS		+= -c
 #	=== KEYS WORDS ===
 NAME		= libft.a
 
-OBJS		= $(SRC:.c=.o)
+OBJS		= $(SRCS:.c=.o)
+OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
 
 #	=== COMMANDES ===
 
@@ -105,8 +115,11 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				@ar rcs $@ $^
 
+bonus:			$(OBJS) $(OBJS_BONUS)
+				@ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+
 clean:
-				@rm -f $(OBJS)
+				@rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean:			clean
 				@rm -f $(NAME)

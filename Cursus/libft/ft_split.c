@@ -84,24 +84,22 @@ char	**ft_split(const char *s, char c)
 {
 	size_t	i;
 	size_t	y;
-	size_t	word;
 	char	**tab;
 
 	i = 0;
 	y = 0;
 	if (!s)
 		return (NULL);
-	word = wordcount(s, c);
-	tab = malloc(sizeof(char *) * (word + 1));
+	tab = malloc(sizeof(char *) * (wordcount(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	while (y < word)
+	while (y < wordcount(s, c))
 	{
 		tab[y] = nextword(s, &i, c, nextlen(s, i, c));
 		if (!tab[y])
 			return (freeall(tab, y));
 		y++;
 	}
-	tab[word] = NULL;
+	tab[wordcount(s, c)] = NULL;
 	return (tab);
 }

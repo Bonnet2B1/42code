@@ -38,12 +38,12 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 // #include <strings.h>
 // #include <stdlib.h>
 
-char otoz(unsigned int i, char c)
-{
-	if (c == 'o' && i < 100 && i > 0)
-		c = 'z';
-	return (c);
-}
+// char otoz(unsigned int i, char c)
+// {
+// 	if (c == 'o' && i < 100 && i > 0)
+// 		c = 'z';
+// 	return (c);
+// }
 
 // int main()
 // {
