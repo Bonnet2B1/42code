@@ -103,3 +103,17 @@ char	**ft_split(const char *s, char c)
 	tab[wordcount(s, c)] = NULL;
 	return (tab);
 }
+
+// int    main()
+// {
+// 	int i;
+// 	char **dest;
+// 	char c = '\0';
+// 	char const s[] = "";
+
+// 	i = 0;
+// 	dest = ft_split(s, c);
+// 	while (dest[i])
+// 	printf("%s\n", dest[i++]);
+// 	return (0);
+// }
