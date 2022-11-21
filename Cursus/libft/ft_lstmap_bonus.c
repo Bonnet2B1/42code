@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 16:17:55 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/21 16:33:59 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/11/21 17:17:59 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/21 17:35:47 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_lstadd_back(t_list **lst, t_list *new)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*lastlink;
-	
-	if (!*lst)
+	while (lst)
 	{
-		*lst = new;
-		return;
+		lst = lst->next;
 	}
-	lastlink = ft_lstlast(*lst);
-	lastlink->next = new; 
 }

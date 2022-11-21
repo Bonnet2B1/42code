@@ -90,10 +90,10 @@ SRCS_BONUS		+= ft_lstadd_front_bonus.c
 SRCS_BONUS		+= ft_lstsize_bonus.c
 SRCS_BONUS		+= ft_lstlast_bonus.c
 SRCS_BONUS		+= ft_lstadd_back_bonus.c
-#SRCS_BONUS		+= ft_lstdelone_bonus.c
-#SRCS_BONUS		+= ft_lstclear_bonus.c
-#SRCS_BONUS		+= ft_lstiter_bonus.c
-#SRCS_BONUS		+= ft_lstmap_bonus.c
+SRCS_BONUS		+= ft_lstdelone_bonus.c
+SRCS_BONUS		+= ft_lstclear_bonus.c
+SRCS_BONUS		+= ft_lstiter_bonus.c
+SRCS_BONUS		+= ft_lstmap_bonus.c
 
 #	=== FLAGS ===
 CFLAGS		+= -Wall
