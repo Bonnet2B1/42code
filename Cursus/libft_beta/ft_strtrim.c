@@ -17,7 +17,7 @@ static int	getstart(const char *s, const char *set)
 	int	start;
 
 	start = 0;
-	while (ft_strchr(set, s[start]))
+	while (ft_strchr(set, s[start]) && *s)
 		start++;
 	return (start);
 }
@@ -41,8 +41,8 @@ char	*ft_strtrim(const char *s, const char *set)
 
 // int main()
 // {
-//   char *str = "&* *Hello **World !*& ";
-//   char *set= "& *";
+//   char *str = "";
+//   char *set= "";
 
 //   printf("Début de la chaine : %d\n", getstart(str, set));
 //   printf("Fin de la chaine   : %d\n", getend(str, set));

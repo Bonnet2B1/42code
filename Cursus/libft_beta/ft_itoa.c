@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2022/11/08 14:13:29 by edelarbr          #+#    #+#             */
 /*   Updated: 2022/11/08 14:13:29 by edelarbr         ###   ########.fr       */
 /*                                                                            */
@@ -56,7 +59,7 @@ char	*ft_itoa(int n)
 
 // #include <stdio.h>
 
-// int main()
+// int	main(void)
 // {
-// 	printf("Le nombre retourne est : %s\n", ft_itoa(-2147483648));
+// 	printf("Le nombre retourne est : %s\n", ft_itoa(-12345));
 // }
