@@ -45,8 +45,16 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 // 	return (c);
 // }
 
+// char otob(unsigned int i, char c)
+// {
+// 	if (c == 'o' && i < 100 && i > 0)
+// 		c = 'b';
+// 	return (c);
+// }
+
 // int main()
 // {
+// 	printf("%s\n", ft_strmapi("Helo World !", otoz));
 // 	printf("%s\n", ft_strmapi("Helo World !", otoz));
 // 	return (0);
 // }

@@ -6,21 +6,21 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:39:50 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/17 16:03:52 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/22 11:43:39 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	size_t size;
+	size_t	size;
 
 	size = 0;
-	while(lst)
+	while (lst)
 	{
 		lst = lst->next;
 		size++;
-	}	
+	}
 	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 13:42:41 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/17 15:29:17 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/22 11:40:04 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *link;
+	t_list	*link;
 
 	link = malloc(sizeof(t_list));
 	link->content = content;
