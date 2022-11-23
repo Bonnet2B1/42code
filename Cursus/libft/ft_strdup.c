@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 23:32:12 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/23 16:40:13 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/08/04 12:13:13 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/05 07:53:32 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
+#include "libft.h"
+
+char	*ft_strdup(const char *src)
 {
-	int	i;
-	int	isrc;
+	int		i;
+	char	*dup;
 
 	i = 0;
-	isrc = 0;
-	while (s1[i])
-		i++;
-	while (s2[isrc])
+	dup = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	if (!dup)
+		return (NULL);
+	while (src[i])
 	{
-		s1[i] = s2[isrc];
+		dup[i] = src[i];
 		i++;
-		isrc++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	dup[i++] = '\0';
+	return (dup);
 }

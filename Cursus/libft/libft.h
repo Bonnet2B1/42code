@@ -12,8 +12,6 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define MAX_NBR 2147483647
-# define MIN_NBR -2147483648
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -23,13 +21,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-/*
-** Perso
-*/
-
-int			ft_chrcmp(char c1, char c2);
-int			ft_isprime(int nb);
 
 /*
 ** First Part
@@ -59,17 +50,6 @@ int			ft_atoi(const char *str);
 void		*ft_calloc(size_t count, size_t size);
 char		*ft_strdup(const char *s1);
 
-
-char		*ft_strcpy(char *dst, const char *src);
-char		*ft_strcat(char *s1, const char *s2);
-void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
-int			ft_islower(int c);
-int			ft_isupper(int c);
-char		*ft_strncpy(char *dest, const char *src, size_t n);
-char		*ft_strncat(char *dest, const char *src, size_t n);
-char		*ft_strstr(const char *s1, const char *s2);
-int			ft_strcmp(const char *s1, const char *s2);
-
 /*
 ** Second part
 */
@@ -85,19 +65,6 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
-
-
-void		ft_putchar(char c);
-void		ft_putstr(char *s);
-void		ft_putendl(char *s);
-void		ft_putnbr(int n);
-void		*ft_memalloc(size_t size);
-void		ft_memdel(void **ap);
-void		ft_strdel(char **as);
-void		ft_strclr(char *s);
-void		ft_striter(char *s, void (*f) (char *));
-char		*ft_strmap(char const *s, char (*f)(char));
-int			ft_isspace(int c);
 
 /*
 ** Part bonus

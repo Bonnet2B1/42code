@@ -6,19 +6,19 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 17:39:23 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/12 16:08:07 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:32:33 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t n)
+char	*ft_strnstr(const char *haystack, const char *to_find, size_t n)
 {
 	size_t	i;
 	size_t	ii;
 	char	*str_not_const;
 
-	str_not_const = (char *)str;
+	str_not_const = (char *)haystack;
 	i = 0;
 	ii = 0;
 	if (to_find[ii] == '\0')
@@ -36,20 +36,20 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	return (0);
 }
 
-// char	*ft_strnstr(const char *str, const char *to_find, size_t n)
+// char	*ft_strnstr(const char *haystack, const char *to_find, size_t n)
 // {
 // 	size_t i;
 
 // 	i = 0;
 // 	if (!*to_find || !to_find)
-// 		return ((char *)str);
-// 	while (i < n && str[i])
+// 		return ((char *)haystack);
+// 	while (i < n && haystack[i])
 // 	{
-// 		if(str[i] == *to_find)
+// 		if(haystack[i] == *to_find)
 // 		{
 // 			if (!ft_strncmp
-//(ft_substr(&((char *)str)[i], 0, n - i), to_find, ft_strlen(to_find)))
-// 				return (&((char *)str)[i]);
+//(ft_substr(&((char *)haystack)[i], 0, n - i), to_find, ft_strlen(to_find)))
+// 				return (&((char *)haystack)[i]);
 // 		}
 // 		i++;
 // 	}

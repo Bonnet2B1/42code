@@ -52,10 +52,3 @@ char	*ft_itoa(int n)
 	}
 	return (s);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	printf("Le nombre retourne est : %s\n", ft_itoa(-12345));
-// }

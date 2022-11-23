@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 23:32:12 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/23 16:40:13 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/11/17 16:17:55 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/22 11:39:23 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
-{
-	int	i;
-	int	isrc;
+#include "libft.h"
 
-	i = 0;
-	isrc = 0;
-	while (s1[i])
-		i++;
-	while (s2[isrc])
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*lastlink;
+
+	if (!*lst)
 	{
-		s1[i] = s2[isrc];
-		i++;
-		isrc++;
+		*lst = new;
+		return ;
 	}
-	s1[i] = '\0';
-	return (s1);
+	lastlink = ft_lstlast(*lst);
+	lastlink->next = new;
 }

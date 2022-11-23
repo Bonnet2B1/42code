@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 23:32:12 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/23 16:40:13 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/07/23 21:45:53 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/05 14:47:53 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int	isrc;
+	size_t	i;
 
 	i = 0;
-	isrc = 0;
-	while (s1[i])
-		i++;
-	while (s2[isrc])
+	while ((s1[i] || s2[i]) && i < n)
 	{
-		s1[i] = s2[isrc];
+		if (!ft_isascii(s1[i]) || !ft_isascii(s2[i]))
+			i++;
+		if ((s1[i] > s2[i]) || !s2[i])
+			return (1);
+		if ((s1[i] < s2[i]) || !s1[i])
+			return (-1);
 		i++;
-		isrc++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (0);
 }

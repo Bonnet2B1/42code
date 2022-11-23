@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 18:16:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/10/31 18:16:39 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/10/31 18:16:50 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:16:50 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	char	*char_dest;
-	char	*char_src;
-
-	if (!dest && !src)
-		return (NULL);
-	i = 0;
-	char_dest = (char *)dest;
-	char_src = (char *)src;
-	if (char_dest < char_src)
+	if (n == -2147483648)
 	{
-		while (i < len)
-		{
-			char_dest[i] = char_src[i];
-			i++;
-		}
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		ft_putnbr_fd(147483648, fd);
 	}
-	else
-		while (len--)
-			char_dest[len] = char_src[len];
-	return (char_dest);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	if (n > 9)
+	{
+		if (n / 10 > 0)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	if (n >= 0 && n <= 9)
+		ft_putchar_fd(n + 48, fd);
 }

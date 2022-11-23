@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 18:16:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/10/31 18:16:39 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:28 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:28 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	char	*str;
 	size_t	i;
-	char	*char_dest;
-	char	*char_src;
 
-	if (!dest && !src)
-		return (NULL);
 	i = 0;
-	char_dest = (char *)dest;
-	char_src = (char *)src;
-	if (char_dest < char_src)
-	{
-		while (i < len)
-		{
-			char_dest[i] = char_src[i];
-			i++;
-		}
-	}
-	else
-		while (len--)
-			char_dest[len] = char_src[len];
-	return (char_dest);
+	if (!s1 && !s2)
+		return (NULL);
+	str = ft_calloc((ft_strlen(s1) + strlen(s2)) + 1, sizeof(char));
+	if (!str)
+		return (NULL);
+	while (*s1)
+		str[i++] = *s1++;
+	while (*s2)
+		str[i++] = *s2++;
+	return (str);
 }

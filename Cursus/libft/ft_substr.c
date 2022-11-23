@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 18:16:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/10/31 18:16:39 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:49 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:49 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*cpy;
 	size_t	i;
-	char	*char_dest;
-	char	*char_src;
+	size_t	slen;
 
-	if (!dest && !src)
-		return (NULL);
 	i = 0;
-	char_dest = (char *)dest;
-	char_src = (char *)src;
-	if (char_dest < char_src)
-	{
-		while (i < len)
-		{
-			char_dest[i] = char_src[i];
-			i++;
-		}
-	}
-	else
-		while (len--)
-			char_dest[len] = char_src[len];
-	return (char_dest);
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	if (start >= slen)
+		len = 0;
+	if (slen - start < len)
+		len = slen - start;
+	cpy = malloc(sizeof(char) * len + 1);
+	if (!cpy)
+		return (NULL);
+	while (len-- && s[start])
+		cpy[i++] = s[start++];
+	cpy[i] = '\0';
+	return (cpy);
 }

@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 18:16:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/10/31 18:16:39 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/10/31 18:17:40 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/10/31 18:17:40 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 #include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
-	char	*char_dest;
-	char	*char_src;
+	unsigned char	*s;
 
-	if (!dest && !src)
+	s = malloc(sizeof(char) * (count * size));
+	if (!s)
 		return (NULL);
-	i = 0;
-	char_dest = (char *)dest;
-	char_src = (char *)src;
-	if (char_dest < char_src)
-	{
-		while (i < len)
-		{
-			char_dest[i] = char_src[i];
-			i++;
-		}
-	}
-	else
-		while (len--)
-			char_dest[len] = char_src[len];
-	return (char_dest);
+	ft_memset(s, '\0', count * size);
+	return (s);
 }

@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 23:32:12 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/23 16:40:13 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/08/02 19:51:17 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/04 16:46:55 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
 	int	i;
-	int	isrc;
+	int	sign;
+	int	nbr;
 
 	i = 0;
-	isrc = 0;
-	while (s1[i])
+	sign = 1;
+	nbr = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	while (s2[isrc])
+	if (str[i] == '-' || str[i] == '+')
 	{
-		s1[i] = s2[isrc];
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
-		isrc++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	if (str[i] == '-' || str[i] == '+')
+		return (0);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nbr = nbr * 10 + (str[i] - 48);
+		i++;
+	}
+	return (sign * nbr);
 }

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 23:32:12 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/23 16:40:13 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/07/27 17:39:23 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/23 17:15:09 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
-{
-	int	i;
-	int	isrc;
+#include "libft.h"
 
+char	*ft_strnstr(const char *haystack, const char *to_find, size_t n)
+{
+	size_t	i;
+	size_t	ii;
+	char	*str_not_const;
+
+	str_not_const = (char *)haystack;
 	i = 0;
-	isrc = 0;
-	while (s1[i])
-		i++;
-	while (s2[isrc])
+	ii = 0;
+	if (to_find[ii] == '\0')
+		return (str_not_const);
+	while (str_not_const[i])
 	{
-		s1[i] = s2[isrc];
+		while (str_not_const[i + ii] == to_find[ii]
+			&& str_not_const[i + ii] && i + ii < n)
+			ii++;
+		if (!to_find[ii])
+			return (str_not_const + i);
 		i++;
-		isrc++;
+		ii = 0;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (0);
 }
