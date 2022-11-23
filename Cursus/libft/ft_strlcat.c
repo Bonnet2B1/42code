@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	len_d;
 	size_t	len_s;
 
+	if (!dstsize && !dst)
+		return 0;
 	i = ft_strlen(dst);
 	j = 0;
 	len_d = ft_strlen(dst);

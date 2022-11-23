@@ -34,5 +34,7 @@ static int	getend(const char *s, const char *set)
 
 char	*ft_strtrim(const char *s, const char *set)
 {
+	if (!s)
+		return (NULL);
 	return (ft_substr(s, getstart(s, set), getend(s, set)));
 }
