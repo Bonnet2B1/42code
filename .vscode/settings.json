@@ -50,7 +50,8 @@
     "streambuf": "cpp",
     "typeinfo": "cpp",
     "pointhache.h": "c",
-    "ft_printf.h": "c"
+    "ft_printf.h": "c",
+    "stdarg.h": "c"
   },
   "search.useGlobalIgnoreFiles": false,
   "search.useParentIgnoreFiles": false,

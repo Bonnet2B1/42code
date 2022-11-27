@@ -6,13 +6,13 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:40:42 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 18:27:41 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:07:34 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int count(int nb)
+static int count(int long long nb)
 {
 	int count;
 
@@ -35,7 +35,7 @@ static int count(int nb)
 	return (count);
 }
 
-static void ft_functionputnbr_pf(int nb)
+static void ft_functionputnbr_pf(long long int nb)
 {
 	if (nb == -2147483648)
 	{
@@ -58,8 +58,9 @@ static void ft_functionputnbr_pf(int nb)
 		ft_putchar_pf(nb + 48);
 }
 
-int	ft_putnbr_pf(int nb	)
+int	ft_putnbr_pf(long long nb)
 {
 	ft_functionputnbr_pf(nb);
-	return(count(nb));
+	return(count((long long)nb));
 }
+

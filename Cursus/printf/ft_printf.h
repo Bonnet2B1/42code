@@ -23,7 +23,7 @@ int	ft_printf(const char *topf, ...);
 int	ft_putchar_str_pf(char **s);
 int	ft_putchar_pf(int c);
 int	ft_putstr_pf(char *s);
-int	ft_putnbr_pf(int nb);
+int	ft_putnbr_pf(long long int nb);
 int ft_putadress_pf(unsigned long long thing);
 
 #endif
