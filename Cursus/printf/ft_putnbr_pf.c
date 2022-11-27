@@ -6,34 +6,37 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:40:42 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 16:01:53 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:27:41 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int count(int nb, int nbsave)
+static int count(int nb)
 {
 	int count;
 
 	count = 0;
-	if (!nb)
-		return (-2147483648);
-	while (nbsave / 10)
+	if (nb == -2147483648)
+		return(11);
+	if (nb <= 0)
 	{
-		nbsave /= 10;
+		count += 1;
+		if (nb < 0)
+			nb *= -1;
+	}
+	while (nb / 10)
+	{
+		nb /= 10;
 		count++;
 	}
-	if (nb < 0)
-		return (count + 1);
+	if (nb >= 1 && nb <= 9)
+		count += 1;
 	return (count);
 }
 
-int	ft_putnbr_pf(int nb)
+static void ft_functionputnbr_pf(int nb)
 {
-	int nbsave;
-
-	nbsave = nb;
 	if (nb == -2147483648)
 	{
 		ft_putchar_pf('-');
@@ -53,5 +56,10 @@ int	ft_putnbr_pf(int nb)
 	}
 	if (nb >= 0 && nb <= 9)
 		ft_putchar_pf(nb + 48);
-	return (count(nb, nbsave));
+}
+
+int	ft_putnbr_pf(int nb	)
+{
+	ft_functionputnbr_pf(nb);
+	return(count(nb));
 }
