@@ -19,9 +19,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int		ft_printf(const char *topf, ...);
-int		ft_putchar_str_pf(char **s);
-int		ft_putchar_pf(int c);
-int		ft_putstr_pf(char *s);
+int	ft_printf(const char *topf, ...);
+int	ft_putchar_str_pf(char **s);
+int	ft_putchar_pf(int c);
+int	ft_putstr_pf(char *s);
+int	ft_putnbr_pf(int nb);
 
 #endif

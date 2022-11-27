@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:53:09 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 15:30:01 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:02:12 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int ft_printf(const char *topf, ...)
 			else if (*topf == 's')
 				ret += ft_putstr_pf(va_arg(ap, char *));
 			else if (*topf == 'd')
-				ret += ft_putstr_pf(ft_itoa_pf(va_arg(ap, int)));
+				ret += ft_putnbr_pf(va_arg(ap, int));
 			topf++;
 		}
 		else
