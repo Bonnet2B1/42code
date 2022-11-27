@@ -6,13 +6,13 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:37:53 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 13:06:44 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/27 15:35:56 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int main(void)
 {
-	printf("\n%d\n", ft_printf("Hello%s%c"," World ", '!'));
+	printf("\n%d\n", ft_printf("Hello%s%c %d"," World ", '!', -12345));
 }

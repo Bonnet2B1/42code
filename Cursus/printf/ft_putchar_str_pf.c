@@ -6,11 +6,11 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:30:24 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 13:18:44 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/27 15:23:29 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar_str_pf(char **s)
 {
