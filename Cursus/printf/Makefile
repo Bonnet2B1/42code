@@ -6,11 +6,14 @@
 #    By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:51:18 by edelarbr          #+#    #+#              #
-#    Updated: 2022/11/27 12:52:45 by edelarbr         ###   ########.fr        #
+#    Updated: 2022/11/27 14:22:06 by edelarbr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		+= ft_printf.c
+SRCS		+= ft_putchar_pf.c
+SRCS		+= ft_putchar_str_pf.c
+SRCS		+= ft_putstr_pf.c
 
 
 #	=== FLAGS ===

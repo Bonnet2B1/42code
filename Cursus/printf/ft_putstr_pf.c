@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 12:27:46 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 12:54:22 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/27 14:47:37 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,16 @@ int	ft_putstr_pf(char *s)
 	int ret;
 
 	ret = 0;
+	if (!s)
+	{
+		ret += ft_putstr_pf("(null)");
+		return (ret);
+	}
 	while (*s)
 	{
-		ret++;
-		write(1, s++, 1);
+		ret += write(1, s++, 1);
+		if(ret < 0)
+			return (-2147483648);
 	}
-	if(ret)
-		return (ret);
-	return (-1);
+	return (ret);
 }
