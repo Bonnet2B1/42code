@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_str_pf.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 15:53:09 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 13:53:56 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/11/25 15:30:24 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/27 13:18:44 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int ft_printf(const char *topf, ...)
+int	ft_putchar_str_pf(char **s)
 {
-	va_list ap;
-	int ret;
-	ret = 0;
-	va_start(ap, topf);
-	while (*topf && ret >= 0)
-	{
-		if(*topf == '%')
-		{
-			topf++;
-			if (*topf == 'c')
-				ret += ft_putchar_pf(va_arg(ap, int));
-			else if (*topf == 's')
-				ret += ft_putstr_pf(va_arg(ap, char *));
-			topf++;
-		}
-		else
-			ret += ft_putchar_str_pf((char **)&topf);
-	}
-	return (ret);
+	*s += 1;
+	return (write(1, &*(*s -1), 1));
 }
+
+// int main(void)
+// {
+// 	char *str = "HelloWorld";
+// 	ft_putchar_pf(&str);
+// }

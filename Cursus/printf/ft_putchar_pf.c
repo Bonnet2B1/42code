@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 14:51:35 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/10/31 18:16:46 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/27 12:59:00 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
+#include "printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar_pf(int c)
 {
-	write(1, &c, 1);
+	return (write(1, &c, 1));
 }

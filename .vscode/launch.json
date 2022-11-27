@@ -5,7 +5,7 @@
       "type": "lldb",
       "request": "launch",
       "name": "Launch",
-      "program": "${workspaceFolder}/Cursus/libft_beta/a.out",
+      "program": "${workspaceFolder}/Cursus/printf/a.out",
       "args": [],
       "cwd": "${workspaceFolder}"
     },

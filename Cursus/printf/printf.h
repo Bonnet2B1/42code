@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 15:53:09 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 13:53:56 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/11/25 15:44:53 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/11/27 12:58:35 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef PRINTF_H
+# define PRINTF_H
 
-int ft_printf(const char *topf, ...)
-{
-	va_list ap;
-	int ret;
-	ret = 0;
-	va_start(ap, topf);
-	while (*topf && ret >= 0)
-	{
-		if(*topf == '%')
-		{
-			topf++;
-			if (*topf == 'c')
-				ret += ft_putchar_pf(va_arg(ap, int));
-			else if (*topf == 's')
-				ret += ft_putstr_pf(va_arg(ap, char *));
-			topf++;
-		}
-		else
-			ret += ft_putchar_str_pf((char **)&topf);
-	}
-	return (ret);
-}
+#include <stdarg.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+int	ft_printf(const char *topf, ...);
+int	ft_putchar_str_pf(char **s);
+int	ft_putchar_pf(int c);
+int	ft_putstr_pf(char *s);
+
+#endif
