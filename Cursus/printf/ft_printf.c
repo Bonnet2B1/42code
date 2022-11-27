@@ -6,16 +6,17 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:53:09 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 19:10:11 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:57:39 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *topf, ...)
+int	ft_printf(const char *topf, ...)
 {
-	va_list ap;
-	int ret;
+	va_list	ap;
+	int		ret;
+
 	ret = 0;
 	va_start(ap, topf);
 	while (*topf && ret >= 0)
@@ -35,6 +36,10 @@ int ft_printf(const char *topf, ...)
 				ret += ft_putnbr_pf(((long long)va_arg(ap, int)));
 			else if (*topf == 'u')
 				ret += ft_putnbr_pf(((long long)va_arg(ap, unsigned int)));
+			else if (*topf == 'x')
+				ret += ft_putnbr_hex_min_pf(va_arg(ap, unsigned int));
+			else if (*topf == 'X')
+				ret += ft_putnbr_hex_maj_pf(va_arg(ap, unsigned int));
 			topf++;
 		}
 		else

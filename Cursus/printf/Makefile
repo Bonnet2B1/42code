@@ -6,7 +6,7 @@
 #    By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:51:18 by edelarbr          #+#    #+#              #
-#    Updated: 2022/11/27 17:20:04 by edelarbr         ###   ########.fr        #
+#    Updated: 2022/11/27 19:23:42 by edelarbr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRCS		+= ft_putchar_str_pf.c
 SRCS		+= ft_putstr_pf.c
 SRCS		+= ft_putnbr_pf.c
 SRCS		+= ft_putadress_pf.c
+SRCS		+= ft_putnbr_hex_min_pf.c
+SRCS		+= ft_putnbr_hex_maj_pf.c
 
 
 #	=== FLAGS ===
