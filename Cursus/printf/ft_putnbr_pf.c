@@ -6,15 +6,15 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:40:42 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/28 20:05:26 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/28 21:44:03 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int count(int long long nb)
+static int	count(long long nb)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (nb <= 0)
@@ -33,7 +33,7 @@ static int count(int long long nb)
 	return (count);
 }
 
-static int	ft_functionputnbr_pf(long long int nb)
+static int	ft_functionputnbr_pf(long long nb)
 {
 	if (nb < 0)
 	{
@@ -41,11 +41,12 @@ static int	ft_functionputnbr_pf(long long int nb)
 			return (-2147483648);
 		nb *= -1;
 	}
-	if (nb > 9)
+	if (nb >= 10)
 	{
-		if (nb / 10 > 0)
-			ft_putnbr_pf(nb / 10);
-		ft_putnbr_pf(nb % 10);
+		if (ft_putnbr_pf(nb / 10) < 0)
+			return (-2147483648);
+		if (ft_putnbr_pf(nb % 10) < 0)
+			return (-2147483648);
 	}
 	if (nb >= 0 && nb <= 9)
 	{
@@ -59,6 +60,5 @@ int	ft_putnbr_pf(long long nb)
 {
 	if (ft_functionputnbr_pf(nb) < 0)
 		return (-2147483648);
-	return (count((long long)nb));
+	return (count(nb));
 }
-

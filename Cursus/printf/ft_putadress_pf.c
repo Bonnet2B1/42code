@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 16:30:30 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 17:31:10 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/28 21:00:18 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ static int	adresslen(unsigned long long thing)
 	return (len + 2);
 }
 
-int ft_putadress_pf(unsigned long long thing)
+int	ft_putadress_pf(unsigned long long thing)
 {
-	int i;
-	int len;
-	char *base16;
-	char *adress;
+	int		i;
+	int		len;
+	char	*base16;
+	char	*adress;
 
 	i = 0;
 	len = adresslen(thing);
 	base16 = "0123456789abcdef";
 	adress = malloc(sizeof(char) * (len +1));
-	if(!adress)
+	if (!adress)
 		return (-2147483648);
 	adress[len] = '\0';
 	while (len > 2)

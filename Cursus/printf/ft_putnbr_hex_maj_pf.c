@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:45:14 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/28 19:58:53 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/28 21:41:45 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,31 @@ static int count_hex_maj(unsigned int nb)
 	return (count);
 }
 
-static void ft_functionputnbr_hex_maj_pf(unsigned int nb)
+static int ft_functionputnbr_hex_maj_pf(unsigned int nb)
 {
 	if (nb >= 16)
 	{
-		ft_functionputnbr_hex_maj_pf(nb / 16);
-		ft_functionputnbr_hex_maj_pf(nb % 16);
+		if (ft_functionputnbr_hex_maj_pf(nb / 16) < 0)
+			return (-2147483648);
+		if (ft_functionputnbr_hex_maj_pf(nb % 16) < 0)
+			return (-2147483648);
 	}
 	else if (nb < 10)
-		ft_putchar_pf(nb + 48);
+	{
+		if (ft_putchar_pf(nb + 48) < 0)
+			return (-2147483648);
+	}
 	else
-		ft_putchar_pf(nb + 55);
+	{
+		if (ft_putchar_pf(nb + 55) < 0)
+			return (-2147483648);
+	}
+	return (1);
 }
 
 int	ft_putnbr_hex_maj_pf(unsigned int nb)
 {
-	ft_functionputnbr_hex_maj_pf(nb);
+	if (ft_functionputnbr_hex_maj_pf(nb) < 0)
+		return (-2147483648);
 	return (count_hex_maj(nb));
 }

@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:53:09 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/28 20:08:03 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/28 21:18:49 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ int	ft_printf(const char *topf, ...)
 				ret += ft_putnbr_hex_min_pf(va_arg(ap, unsigned int));
 			else if (*topf == 'X')
 				ret += ft_putnbr_hex_maj_pf(va_arg(ap, unsigned int));
-			topf++;
 		}
 		else if (ret >= 0)
-			ret += ft_putchar_str_pf((char **)&topf);
+			ret += ft_putchar_pf(*topf);
+		topf++;
 	}
 	if (ret < 0)
 		return (-1);

@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 14:51:35 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 19:54:19 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/28 21:25:40 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_putchar_pf(int c)
 {
-	int ret;
+	int	ret;
 
 	ret = write(1, &c, 1);
-	if (ret <= 0)
+	if (ret == -1)
 		return (-2147483648);
 	return (ret);
 }

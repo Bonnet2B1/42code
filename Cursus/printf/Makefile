@@ -6,13 +6,12 @@
 #    By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:51:18 by edelarbr          #+#    #+#              #
-#    Updated: 2022/11/27 19:23:42 by edelarbr         ###   ########.fr        #
+#    Updated: 2022/11/28 21:04:25 by edelarbr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		+= ft_printf.c
 SRCS		+= ft_putchar_pf.c
-SRCS		+= ft_putchar_str_pf.c
 SRCS		+= ft_putstr_pf.c
 SRCS		+= ft_putnbr_pf.c
 SRCS		+= ft_putadress_pf.c
