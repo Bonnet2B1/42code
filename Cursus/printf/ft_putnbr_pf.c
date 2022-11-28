@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:40:42 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 19:16:09 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:05:26 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ static int count(int long long nb)
 	return (count);
 }
 
-static void ft_functionputnbr_pf(long long int nb)
+static int	ft_functionputnbr_pf(long long int nb)
 {
 	if (nb < 0)
 	{
-		ft_putchar_pf('-');
+		if (ft_putchar_pf('-') < 0)
+			return (-2147483648);
 		nb *= -1;
 	}
 	if (nb > 9)
@@ -47,12 +48,17 @@ static void ft_functionputnbr_pf(long long int nb)
 		ft_putnbr_pf(nb % 10);
 	}
 	if (nb >= 0 && nb <= 9)
-		ft_putchar_pf(nb + 48);
+	{
+		if (ft_putchar_pf(nb + 48) < 0)
+			return (-2147483648);
+	}
+	return (1);
 }
 
 int	ft_putnbr_pf(long long nb)
 {
-	ft_functionputnbr_pf(nb);
-	return(count((long long)nb));
+	if (ft_functionputnbr_pf(nb) < 0)
+		return (-2147483648);
+	return (count((long long)nb));
 }
 

@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:45:14 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 19:49:08 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:58:53 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ static void ft_functionputnbr_hex_maj_pf(unsigned int nb)
 int	ft_putnbr_hex_maj_pf(unsigned int nb)
 {
 	ft_functionputnbr_hex_maj_pf(nb);
-	return(count_hex_maj(nb));
+	return (count_hex_maj(nb));
 }

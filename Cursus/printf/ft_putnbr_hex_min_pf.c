@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:16:43 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 19:44:49 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:10:14 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,12 @@ static void ft_functionputnbr_hex_min_pf(unsigned int nb)
 	else if (nb < 10)
 		ft_putchar_pf(nb + 48);
 	else
-		ft_putchar_pf(nb + 87);
+		if (ft_putchar_pf(nb + 87) < 0)
+			return 
 }
 
 int	ft_putnbr_hex_min_pf(unsigned int nb)
 {
 	ft_functionputnbr_hex_min_pf(nb);
-	return(count_hex_min(nb));
+	return (count_hex_min(nb));
 }
