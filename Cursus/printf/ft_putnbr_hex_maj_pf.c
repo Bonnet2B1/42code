@@ -6,15 +6,15 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:45:14 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/28 21:41:45 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:27:30 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int count_hex_maj(unsigned int nb)
+static int	count_hex_maj(unsigned int nb)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (!nb)
@@ -27,7 +27,7 @@ static int count_hex_maj(unsigned int nb)
 	return (count);
 }
 
-static int ft_functionputnbr_hex_maj_pf(unsigned int nb)
+static int	ft_functionputnbr_hex_maj_pf(unsigned int nb)
 {
 	if (nb >= 16)
 	{

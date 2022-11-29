@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:16:43 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/28 21:40:00 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:27:40 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	count_hex_min(unsigned int nb)
 	return (count);
 }
 
-static int ft_functionputnbr_hex_min_pf(unsigned int nb)
+static int	ft_functionputnbr_hex_min_pf(unsigned int nb)
 {
 	if (nb >= 16)
 	{
