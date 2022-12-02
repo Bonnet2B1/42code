@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:37:53 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/28 21:06:00 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:18:03 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	main(void)
 {
-	ft_printf("\nRetour de ft_printf : %d\n", ft_printf("%d", 10));
+	ft_printf("\nRetour de ft_printf : %d\n", ft_printf("%x", -10));
 }

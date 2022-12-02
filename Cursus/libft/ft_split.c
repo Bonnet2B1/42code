@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	nextlen(const char *s, size_t i, char c)
+static size_t	nextlen(const char *s, size_t i, char c)
 {
 	size_t	len;
 
@@ -27,7 +27,7 @@ size_t	nextlen(const char *s, size_t i, char c)
 	return (len);
 }
 
-size_t	wordcount(const char *s, char c)
+static size_t	wordcount(const char *s, char c)
 {
 	size_t	count;
 	size_t	i;
@@ -43,7 +43,7 @@ size_t	wordcount(const char *s, char c)
 	return (count);
 }
 
-char	*nextword(const char *s, size_t *i, char c, size_t len)
+static char	*nextword(const char *s, size_t *i, char c, size_t len)
 {
 	char	*cpy;
 	size_t	y;
@@ -63,7 +63,7 @@ char	*nextword(const char *s, size_t *i, char c, size_t len)
 	return (cpy);
 }
 
-char	**freeall(char **tab, size_t indice)
+static char	**freeall(char **tab, size_t indice)
 {
 	size_t	y;
 
