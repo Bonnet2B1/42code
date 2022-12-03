@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:59:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/03 17:42:16 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/03 20:06:19 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,37 @@
 
 char	*get_next_line(int fd)
 {
+	if(fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
 	char *storage;
 	char *buf;
-	char **tab;
+	static char **tab;
 	static int i;
-	i = -1;
+	if (!tab)
+		i = -1;
 	int j;
 	j = 0;
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	storage = NULL;
 	while(read(fd, buf, BUFFER_SIZE) > 0)
 	{
-		printf("Test\n");
 		buf[BUFFER_SIZE] = '\0';
 		storage = ft_strjoin(storage, buf);
 	}
-	tab = ft_split(storage, '\n');
-	free(storage);
+	if (!tab)
+		tab = ft_split(storage, '\n');
 	free(buf);
+	free(storage);
 	// while(tab[j][0])
 	// 	printf("%s", tab[j++]);
-	if(tab[i + 1][0])
-	{
-		i++;
+	i++;
+	if(tab[i])
 		return (tab[i]);
+	while (j <= i)
+	{
+		free(tab[j]);
+		j++;
 	}
+	free(tab);
 	return (NULL);
 }

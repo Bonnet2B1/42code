@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:08 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/03 17:24:44 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/03 20:10:42 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,13 @@ static char	*nextword(const char *s, size_t *i, char c, size_t len)
 		cpy[y++] = s[(*i)++];
 		len--;
 	}
-	cpy[y] = '\n';
-	cpy[++y] = '\0';
+	if (s[*i] == '\n')
+	{
+		cpy[y] = '\n';
+		cpy[++y] = '\0';
+	}
+	else
+		cpy[y] = '\0';
 	return (cpy);
 }
 
