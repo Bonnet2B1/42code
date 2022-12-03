@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:59:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/03 20:06:19 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/03 20:37:35 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	char *storage;
 	char *buf;
+	int bufi;
 	static char **tab;
 	static int i;
 	if (!tab)
@@ -31,6 +32,9 @@ char	*get_next_line(int fd)
 	{
 		buf[BUFFER_SIZE] = '\0';
 		storage = ft_strjoin(storage, buf);
+		bufi = -1;
+		while(buf[bufi++])
+			buf[bufi] = '\0'; 
 	}
 	if (!tab)
 		tab = ft_split(storage, '\n');
