@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:19:11 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/03 15:31:01 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:07:58 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ int main()
 	char *line;
 
 	fd = open("text.txt", O_RDONLY);
+	line = get_next_line(fd);
+	printf("%s", line);
 
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (line == NULL)
-			break;
-		printf("%s", line);
-	}
+	// while (1)
+	// {
+	// 	line = get_next_line(fd);
+	// 	if (line == NULL)
+	// 		break;
+	// 	printf("%s", line);
+	// }
 	return 0;
 }
