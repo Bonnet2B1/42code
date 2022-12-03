@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:08 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/02 18:46:36 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/03 17:24:44 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 
 	i = 0;
+	if (!s1)
+		s1 = ft_calloc(1, sizeof(char));
 	if (!s1 || !s2)
 		return (NULL);
 	str = ft_calloc((ft_strlen(s1) + ft_strlen(s2)) + 1, sizeof(char));
