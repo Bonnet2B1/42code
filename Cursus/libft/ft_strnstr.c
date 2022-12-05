@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 17:39:23 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/11/27 19:59:14 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/05 20:31:23 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 		return (haystack_notconst);
 	while (haystack_notconst[i])
 	{
-		while (haystack_notconst[i + j] == needle[j] &&
-			haystack_notconst[i + j] && i + j < n)
+		while (haystack_notconst[i + j] == needle[j]
+			&& haystack_notconst[i + j] && i + j < n)
 			j++;
 		if (!needle[j])
 			return (haystack_notconst + i);
