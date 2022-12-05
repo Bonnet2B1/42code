@@ -18,10 +18,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	slen;
 
+	slen = 0;
 	i = 0;
 	if (!s)
 		return (NULL);
-	slen = ft_strlen(s);
+	while(s[slen])
+		slen++;
 	if (start >= slen)
 		len = 0;
 	if (slen - start < len)

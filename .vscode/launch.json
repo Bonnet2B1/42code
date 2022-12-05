@@ -5,7 +5,7 @@
       "type": "lldb",
       "request": "launch",
       "name": "Launch",
-      "program": "${workspaceFolder}/Cursus/printf/a.out",
+      "program": "${workspaceFolder}/Cursus/get_next_line/a.out",
       "args": [],
       "cwd": "${workspaceFolder}"
     },

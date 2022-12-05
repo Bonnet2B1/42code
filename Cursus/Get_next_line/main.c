@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:19:11 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/03 16:49:43 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:08:22 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main()
 	char *line;
 
 	fd = open("text.txt", O_RDONLY);
-	// line = get_next_line(fd);
-	// printf("%s", line);
+	line = get_next_line(fd);
+	printf("%s", line);
 
 	while (1)
 	{

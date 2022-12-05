@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 17:17:59 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/05 19:16:56 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/12/03 15:19:11 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/12/03 16:49:43 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
+#include <fcntl.h>
+#include <stdio.h>
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+int main()
 {
-	t_list	*new;
-	t_list	*firstlink;
-	t_list	*tmp;
+	int fd;
+	char *line;
 
-	firstlink = 0;
-	if (!lst || !f)
-		return (NULL);
-	while (lst)
+	fd = open("text.txt", O_RDONLY);
+	// line = get_next_line(fd);
+	// printf("%s", line);
+
+	while (1)
 	{
-		tmp = (*f)(lst->content);
-		new = ft_lstnew(tmp);
-		if (!new)
-		{
-			free(tmp);
-			ft_lstclear(&firstlink, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&firstlink, new);
-		lst = lst->next;
+		line = get_next_line(fd);
+		if (line == NULL)
+			break;
+		printf("%s", line);
 	}
-	return (firstlink);
+	return 0;
 }

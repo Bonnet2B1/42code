@@ -6,43 +6,40 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:59:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/05 20:13:18 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/05 18:10:05 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdio.h>
 
-int findstart(char *s, int *i)
-{
-	while (s[*i])
-	{
-		if (s[*i] == '\n' || !s[*i])
-			return (0);
-		(*i)++;
-	}
-	return (1);
-}
-
 char	*get_next_line(int fd)
 {
 	if(fd <= 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	static save save;
-	save.start = 0;
-	save.storage = NULL;
-	int buf_i = 0;
+	char *storage;
 	char *buf;
+	int bufi;
+	static char **tab;
+	int j;
+	j = 0;
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	buf_i = read(fd, buf, BUFFER_SIZE);
-	while(buf_i > 0 && findstart(save.storage, &save.start))
+	storage = NULL;
+	bufi = read(fd, buf, BUFFER_SIZE);
+	while(bufi > 0)
 	{
-		buf[buf_i] = '\0';
-		save.storage = ft_strjoin(save.storage, buf); 
-		buf_i = read(fd, buf, BUFFER_SIZE);
+		buf[bufi] = '\0';
+		storage = ft_strjoin(storage, buf); 
+		bufi = read(fd, buf, BUFFER_SIZE);
 	}
-	if(save.storage[save.start])
-		return (ft_substr(save.storage, save.start, nextlen(save.storage, save.start) + 1));
-	free(save.storage);
+	if (!tab)
+		tab = ft_split(storage, '\n');
+	// while(tab[j][0])
+	// 	printf("%s", tab[j++]);
+	if(*tab)
+		return (*tab++);
+	while()
+	freeall(tab, wordcount(storage, '\n') - 1);
+	free(storage);
 	return (NULL);
 }
