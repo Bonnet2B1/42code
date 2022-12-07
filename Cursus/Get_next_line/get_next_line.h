@@ -6,14 +6,14 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:03 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/05 20:09:11 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:06:32 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 4
 # endif
 
 # include <unistd.h>
@@ -27,7 +27,7 @@ typedef struct	save
 
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_substr(char const *s, int start, int len);
 int		nextlen(const char *s, int i);
 int		ft_strlen(const char *s);

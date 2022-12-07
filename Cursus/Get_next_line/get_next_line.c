@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:59:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/05 20:13:18 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:07:10 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,41 @@ int findstart(char *s, int *i)
 	return (1);
 }
 
+int istherenl(char *buf, int len)
+{
+	int i = 0;
+	while(i < len - 1)
+	{
+		if (!buf[i] || buf[i] == '\n')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 char	*get_next_line(int fd)
 {
-	if(fd <= 0 || BUFFER_SIZE <= 0)
+	static int savestart = -1;
+	static char *savestorage = NULL;
+	char *buf = NULL;
+	int buf_i;
+	
+	if(fd <= 1 || BUFFER_SIZE <= 0)
 		return (NULL);
-	static save save;
-	save.start = 0;
-	save.storage = NULL;
-	int buf_i = 0;
-	char *buf;
+	savestart += (nextlen(savestorage, savestart) + 1);
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	buf_i = read(fd, buf, BUFFER_SIZE);
-	while(buf_i > 0 && findstart(save.storage, &save.start))
+	while(buf_i > 0)
 	{
 		buf[buf_i] = '\0';
-		save.storage = ft_strjoin(save.storage, buf); 
+		savestorage = ft_strjoin(savestorage, buf);
+		if (!istherenl(buf, BUFFER_SIZE))
+			break ;
 		buf_i = read(fd, buf, BUFFER_SIZE);
 	}
-	if(save.storage[save.start])
-		return (ft_substr(save.storage, save.start, nextlen(save.storage, save.start) + 1));
-	free(save.storage);
+	free(buf);
+	if(savestorage[savestart])
+		return (ft_substr(savestorage, savestart, nextlen(savestorage, savestart) + 1));
+	free(savestorage);
 	return (NULL);
 }
