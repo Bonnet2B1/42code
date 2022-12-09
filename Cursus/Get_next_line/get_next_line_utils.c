@@ -6,11 +6,29 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:08 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/07 17:07:19 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:42:47 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*ft_strdup(const char *src)
+{
+	int		i;
+	char	*dup;
+
+	i = 0;
+	dup = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	if (!dup)
+		return (NULL);
+	while (src[i])
+	{
+		dup[i] = src[i];
+		i++;
+	}
+	dup[i++] = '\0';
+	return (dup);
+}
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -19,24 +37,15 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	i = 0;
 	if (!s1)
-	{
-		s1 = malloc(1 * sizeof(char));
-		if(!s1)
-			return (NULL);
-		*s1 = '\0';
-	}
+		return (ft_strdup(s2));
 	str = malloc(((ft_strlen(s1) + ft_strlen(s2)) + 1) * sizeof(char));
 	if (!str)
-	{
-		free(s1);
 		return (NULL);
-	}
 	while (*s1)
 		str[i++] = *s1++;
 	while (*s2)
 		str[i++] = *s2++;
 	str[i] = '\0';
-	free(s1);
 	return (str);
 }
 
@@ -74,7 +83,7 @@ char	*ft_substr(char const *s, int start, int len)
 
 	slen = 0;
 	i = 0;
-	if (!s)
+	if (!s || !len)
 		return (NULL);
 	while(s[slen])
 		slen++;

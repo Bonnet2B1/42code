@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:59:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/07 17:07:10 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:32:24 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int istherenl(char *buf, int len)
 char	*get_next_line(int fd)
 {
 	static int savestart = -1;
-	static char *savestorage = NULL;
+	static char *savestorage;
 	char *buf = NULL;
 	int buf_i;
 	
@@ -60,5 +60,6 @@ char	*get_next_line(int fd)
 	if(savestorage[savestart])
 		return (ft_substr(savestorage, savestart, nextlen(savestorage, savestart) + 1));
 	free(savestorage);
+	savestorage = NULL;
 	return (NULL);
 }

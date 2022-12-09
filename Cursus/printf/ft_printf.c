@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:53:09 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/07 14:39:44 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:29:06 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ int	ft_printf(const char *topf, ...)
 	va_start(ap, topf);
 	while (*topf && ret >= 0)
 	{
-		if (*topf == '%' && ret >= 0)
+		if (*topf == '%')
 		{
 			topf++;
 			selectfunction(*topf, &ret, ap);
 		}
-		else if (ret >= 0)
+		else
 			ret += ft_putchar_pf(*topf);
 		topf++;
 	}
@@ -55,3 +55,4 @@ int	ft_printf(const char *topf, ...)
 		return (-1);
 	return (ret);
 }
+
