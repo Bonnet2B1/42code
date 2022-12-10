@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:59:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/10 19:22:20 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/10 22:32:12 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ char	*get_next_line(int fd)
 	if(fd <= 1 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
+		return NULL;
 	buf_i = read(fd, buf, BUFFER_SIZE);
 	while(buf_i > 0)
 	{

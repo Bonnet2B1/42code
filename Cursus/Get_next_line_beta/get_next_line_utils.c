@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:08 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/05 17:25:54 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/10 21:35:13 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,30 +97,29 @@ size_t	wordcount(const char *s, char c)
 	return (count);
 }
 
-static char	**nextword(const char *s, size_t *i, char c, size_t len)
+static char	*nextword(const char *s, size_t i, char c, size_t len)
 {
-	char	**cpy;
-	size_t	y;
+	char	*cpy;
 
-	y = 0;
-	while (s[*i] == c)
-		(*i)++;
+	while (s[i] == c)
+		i++;
 	cpy = malloc(sizeof(char));
-	cpy[0] = malloc(sizeof(char) * (len + 2));
+	cpy = malloc(sizeof(char) * (len + 2));
 	if (!cpy)
 		return (NULL);
 	while (len)
 	{
-		cpy[0][y++] = s[(*i)++];
+		*cpy++ = s[i++];
 		len--;
 	}
-	if (s[*i] == '\n')
+	if (s[i] == '\n')
 	{
-		cpy[0][y] = '\n';
-		cpy[0][++y] = '\0';
+		*cpy = '\n';
+		cpy++;
+		*cpy = '\0';
 	}
 	else
-		cpy[0][y] = '\0';
+		*cpy = '\0';
 	return (cpy);
 }
 
@@ -143,7 +142,6 @@ char	**ft_split(const char *s, char c)
 	size_t	i;
 	size_t	y;
 	char	**tab;
-	char	**cpy;
 
 	i = 0;
 	y = 0;
@@ -154,9 +152,7 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	while (y < wordcount(s, c))
 	{
-		cpy = nextword(s, &i, c, nextlen(s, i, c));
-		tab[y] = cpy[0];
-		// freeall(cpy, 0);
+		tab[y] = nextword(s, i, c, nextlen(s, i, c));
 		if (!tab[y])
 			return (freeall(tab, y));
 		y++;

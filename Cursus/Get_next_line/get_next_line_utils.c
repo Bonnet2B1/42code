@@ -6,13 +6,13 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:08 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/10 19:13:16 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/10 22:38:52 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(char *src)
 {
 	int		i;
 	char	*dup;
@@ -34,18 +34,21 @@ char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;
+	size_t	j;
 
 	i = 0;
+	j = 0;
 	if (!s1)
 		return (ft_strdup(s2));
 	str = malloc(((ft_strlen(s1) + ft_strlen(s2)) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	while (*s1)
-		str[i++] = *s1++;
+	while (s1[j])
+		str[i++] = s1[j++];
 	while (*s2)
 		str[i++] = *s2++;
 	str[i] = '\0';
+	free(s1);
 	return (str);
 }
 
