@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:59:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/05 18:10:05 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/09 18:55:40 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*get_next_line(int fd)
 	char *buf;
 	int bufi;
 	static char **tab;
-	int j;
+	static int j;
+
 	j = 0;
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	storage = NULL;
@@ -38,8 +39,8 @@ char	*get_next_line(int fd)
 	// 	printf("%s", tab[j++]);
 	if(*tab)
 		return (*tab++);
-	while()
-	freeall(tab, wordcount(storage, '\n') - 1);
-	free(storage);
+	freeall(tab, j);
+	if (storage)
+		free(storage);
 	return (NULL);
 }

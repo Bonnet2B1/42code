@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:08 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/09 16:42:47 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/10 19:13:16 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	nextlen(const char *s, int i)
 {
 	int	len;
 
-	if(!s)
+	if(!s || i < 0)
 		return (0);
 	len = 0;
 	while (s[i] != '\n' && s[i])

@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:03 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/09 16:29:22 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/10 18:30:52 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct	save
 {
 	int 	start;
 	char 	*storage;
-}					save;
+}				save;
 
 
 char	*get_next_line(int fd);
