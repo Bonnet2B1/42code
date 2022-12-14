@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:08 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/10 22:38:52 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/14 14:32:26 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ char	*ft_strdup(char *src)
 	char	*dup;
 
 	i = 0;
-	dup = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	if (!*src)
+		dup = malloc(sizeof(char));
+	else 
+		dup = malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (!dup)
 		return (NULL);
 	while (src[i])
@@ -26,7 +29,7 @@ char	*ft_strdup(char *src)
 		dup[i] = src[i];
 		i++;
 	}
-	dup[i++] = '\0';
+	dup[i] = '\0';
 	return (dup);
 }
 
@@ -57,6 +60,8 @@ int	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
+	if(!s)
+		return (0);
 	while (s[i])
 		i++;
 	return (i);
@@ -75,6 +80,8 @@ int	nextlen(const char *s, int i)
 		len++;
 		i++;
 	}
+	if (!s[i])
+		return (len - 1);
 	return (len);
 }
 
