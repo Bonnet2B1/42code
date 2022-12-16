@@ -52,7 +52,8 @@
     "pointhache.h": "c",
     "ft_printf.h": "c",
     "stdarg.h": "c",
-    "get_next_line.h": "c"
+    "get_next_line.h": "c",
+    "fcntl.h": "c"
   },
   "search.useGlobalIgnoreFiles": false,
   "search.useParentIgnoreFiles": false,
