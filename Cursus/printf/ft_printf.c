@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:53:09 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/09 16:29:06 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/16 17:13:14 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,3 @@ int	ft_printf(const char *topf, ...)
 		return (-1);
 	return (ret);
 }
-
