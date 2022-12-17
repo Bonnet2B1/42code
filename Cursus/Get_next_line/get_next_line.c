@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:59:39 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/16 15:33:15 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/17 15:54:34 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char	*get_next_line(int fd)
 			break ;
 		buf_i = read(fd, buf, BUFFER_SIZE);
 	}
+	if (buf_i == -1)
+		free(savestorage);
 	free(buf);
 	buf = NULL;
 	savestart += (nextlen(savestorage, savestart) + 1);
