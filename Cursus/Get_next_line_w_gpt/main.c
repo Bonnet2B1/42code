@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 15:00:03 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/19 22:05:12 by edelarbr         ###   ########.fr       */
+/*   Created: 2022/12/03 15:19:11 by edelarbr          #+#    #+#             */
+/*   Updated: 2022/12/03 16:49:43 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
-# endif
+#include "get_next_line.h"
+#include <fcntl.h>
+#include <stdio.h>
 
-# include <unistd.h>
-# include <stdlib.h>
+int main()
+{
+	int fd;
+	char *line;
 
-char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char *s2, int bufstart);
-char	*ft_substr(char const *s, int start, int len);
-int		nextlen(const char *s, int i);
-int		ft_strlen(const char *s);
-int		bufstart(char *buf, int stop);
+	fd = open("text.txt", O_RDONLY);
+	// line = get_next_line(fd);
+	// printf("%s", line);
 
-
-#endif
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break;
+		printf("%s", line);
+	}
+	return 0;
+}

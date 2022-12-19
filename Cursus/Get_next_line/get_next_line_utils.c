@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:08 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/16 15:30:09 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:19:15 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strdup(char *src)
 {
 	int		i;
-	char	*dup;
+	char	*dup = NULL;
 
 	i = 0;
 	if (!*src)
@@ -35,7 +35,7 @@ char	*ft_strdup(char *src)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*str;
+	char	*str = NULL;
 	size_t	i;
 	size_t	j;
 
@@ -52,6 +52,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		str[i++] = *s2++;
 	str[i] = '\0';
 	free(s1);
+	s1 = (NULL);
 	return (str);
 }
 
@@ -87,7 +88,7 @@ int	nextlen(const char *s, int i)
 
 char	*ft_substr(char const *s, int start, int len)
 {
-	char	*cpy;
+	char	*cpy = NULL;
 	int		i;
 	int		slen;
 
