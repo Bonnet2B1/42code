@@ -6,7 +6,7 @@
 /*   By: edelarbr <edelarbr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:00:03 by edelarbr          #+#    #+#             */
-/*   Updated: 2022/12/19 22:05:12 by edelarbr         ###   ########.fr       */
+/*   Updated: 2022/12/20 17:01:46 by edelarbr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,5 @@
 # include <stdlib.h>
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char *s2, int bufstart);
-char	*ft_substr(char const *s, int start, int len);
-int		nextlen(const char *s, int i);
-int		ft_strlen(const char *s);
-int		bufstart(char *buf, int stop);
-
 
 #endif
